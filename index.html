@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Cassandra</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+	<link rel="stylesheet" href="css/custom.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/solarized-light.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Partie 1 - Intro -->
+			<section>
+				<section data-background-color="white" data-background="img/title.png" data-background-size="100%">
+					<aside class="notes">
+						<h2></h2>
+					</aside>
+				</section>
+
+				<section>
+					<img class="plain" src="img/you_are_here.png" height="150">
+					<h3>Qu'est-ce qu'on fait ici ?</h3>
+					<ul>
+						<li>Technologie</li>
+						<li>Cas d'utilisation</li>
+					</ul>
+					<aside class="notes">
+						<ol>
+							<li><em>Découvrir</em> une techno. Pas le temps d'approfondir.</li>
+							<li><em>Appliquer</em> sur un cas "réel". simplifié pour l'exemple.</li>
+							<li><em>Partager</em> l'expérience. Comment elle nous a servi? Ce qu'on en retient de bien, de moins bien</li>
+						</ol>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Partie 2 - Présentation rapide de git & objectifs de la présentation -->
+			<section>
+				<section>
+					<h2>git</h2>
+					<!-- TODO logo git ou la bouille de Linus -->
+					<img src="img/cassandra-logo.png" class="plain" width="300">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Objectifs</h2>
+					<!--video class="stretch" utoplay="true" controls="controls">
+						<source src="video/cake.mp4" type="video/mp4" />
+					</video-->
+					<aside class="notes"></aside>
+				</section>
+			</section>
+
+			<!-- Partie 3 - Clients -->
+			<section>
+				<section>
+					<h2 style="color: #5d5d5d;">Clients</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+			<!-- Partie 4 - Commandes pour aller plus loin -->
+			<section>
+				<section>
+					<h2>Commande</h2>
+					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+				<!-- Part 5 outils autour de git -->
+			<section>
+				<section>
+					<h2>Autour de git</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+			<!-- Part 6 Créer son plugin -->
+			<section>
+				<section>
+					<h2>Créer son plugin</h2>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Part 7 Théorie -->
+			<section>
+				<section>
+					<h2>Théorie</h2>
+					<aside class="notes">
+						<h2>Pierre</h2>
+						TODO
+					</aside>
+				</section>
+			</section>
+
+			<!-- Part 8 Gource -->
+			<section>
+				<section>
+					<h2>Gource</h2>
+				</section>
+			</section>
+
+			<!-- Part 9 Ciao ! -->
+			<section>
+                <section>
+					<h2>Joyeux Noël !</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Au prochain épisode...</h2>
+					<img class="plain stretch" src="img/flyer_securite_head.png">
+					<aside class="notes">
+						<h2>Pierre</h2>
+						TODO
+					</aside>
+				</section>
+			</section>
+
+			<section>
+				<h2>Licence</h2>
+				Pour ce qui concerne tous les contenus que nous avons produits dans cette présentation :
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir les subtilités de Cassandra</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://barmic.github.io/viseo-take-an-hour_cassandra" property="cc:attributionName" rel="cc:attributionURL">Viseo -  Pierre Bourret & Michel Barret</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International</a>.<br />Fondé(e) sur une œuvre à <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/barmic/viseo-take-an-hour_cassandra.git" rel="dct:source">https://github.com/barmic/viseo-take-an-hour_cassandra.git</a>.
+			</section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/tagcloud/tagcloud.js', async: true }
+            ],
+            // slideNumber: 'c/t', // Absolute slide numbers (with total).
+            slideNumber: true, // Enable hierarchical slide numbers
+            history: true // Enable slide number in URL fragment
+		});
+		// Automatic fragment numbering
+var fragmentNumbering = function ( event ) {
+  var fragments = $(event.currentSlide).find('.fragment');
+  var order = new Array(fragments.length);
+
+  $(fragments).filter('[data-index]').each( function () {
+    var index = parseInt($(this).attr('data-index')) - 1;
+    if (index < 0 || index >= order.length) {
+      alert('Invalid data-index: ' + index);
+      return;
+    }
+    if (typeof order[index] == 'undefined') {
+      order[index] = [ $(this) ];
+    } else {
+      order[index].push($(this));
+    }
+  });
+
+  var index = 0;
+  $(fragments).not('[data-index]').each( function () {
+    while(typeof order[index] != 'undefined') {
+      index = index + 1;
+    }
+    order[index] = [ $(this) ];
+  });
+
+  $(order).each( function (index) {
+    $(this).each( function () {
+      $(this).attr('data-fragment-index', index);
+    })
+  });
+};
+Reveal.addEventListener('ready', fragmentNumbering);
+Reveal.addEventListener('slidechanged', fragmentNumbering);
+
+hljs.initHighlightingOnLoad();
+
+		function vidplay() {
+			var video = document.getElementById("Video1");
+			if (video.paused) {
+				video.play();
+			}
+		}
+	</script>
+</body>
+</html>
