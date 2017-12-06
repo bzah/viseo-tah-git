@@ -110,8 +110,8 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 </section>
 <section>
 	<h2>Historique</h2>
-<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
+	<pre><code>git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit</code></pre>
+<pre><code>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
 * c0bd721 - Licence (il y a 3 mois) &lt;barmic>
 * 284c025 - Use https (il y a 3 mois) &lt;barmic>
 * c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
@@ -145,7 +145,14 @@ pick 0e40ba5 Licence
 					<h2>commit -p</h2>
 				</section>
 				<section>
-					<h2>reflog</h2>
+					<h2>Journal de références</h2>
+<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
+0f8dde4 HEAD@{1}: rebase -i (squash): first + third
+606813c HEAD@{2}: rebase -i (start): checkout f07ec95
+b8fed7c HEAD@{3}: commit: third
+e3025b3 HEAD@{4}: commit: second
+606813c HEAD@{5}: commit: first
+f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 			</section>
 
