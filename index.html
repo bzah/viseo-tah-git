@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Cassandra</title>
+	<title>Git</title>
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 	<link rel="stylesheet" href="css/custom.css">
@@ -73,6 +73,79 @@
 					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
 					<aside class="notes">
 					</aside>
+				</section>
+				<section>
+					<h2>Historique</h2>
+<pre><code data-trim># git log
+commit 0e40ba54b03f04c3786ea1e36542db248279797b
+Author: barmic <yoko.java@gmail.com>
+Date:   Fri Sep 1 11:57:08 2017 +0200
+
+	Licence
+
+commit c0bd721d8ef471c09bd1f21013dc8eb9ab7f7928
+Author: barmic <yoko.java@gmail.com>
+Date:   Fri Sep 1 11:54:12 2017 +0200
+
+	Licence
+
+commit 284c025e251d7220bb787744aee8fab933bb5743
+Author: barmic <yoko.java@gmail.com>
+Date:   Fri Sep 1 11:48:04 2017 +0200
+
+	Use https
+
+commit c6b76cf77fdfb328c07ad1ee9f2657b045b52a47
+Author: barmic <yoko.java@gmail.com>
+Date:   Fri Sep 1 11:46:54 2017 +0200
+
+	Import highlight
+
+commit 3d057a69c40ab97f2debb29b0c15557eb34e30e6
+Author: barmic <yoko.java@gmail.com>
+Date:   Fri Sep 1 11:44:51 2017 +0200
+
+	JS improve		
+</code></pre>
+</section>
+<section>
+	<h2>Historique</h2>
+<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
+* c0bd721 - Licence (il y a 3 mois) &lt;barmic>
+* 284c025 - Use https (il y a 3 mois) &lt;barmic>
+* c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
+* 3d057a6 - JS improve (il y a 3 mois) &lt;barmic>
+</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Cherry pick</h2>
+				</section>
+				<section>
+					<h2>Rebase intéractif</h2>
+<pre><code>pick 3d057a6 JS improve
+pick c6b76cf Import highlight
+pick 284c025 Use https
+pick c0bd721 Licence
+pick 0e40ba5 Licence
+</code></pre>
+					<ul>
+						<li><em>pick</em> picorer le commit</li> 
+						<li><em>reword</em> picorer le commit, mais reformuler</li>
+						<li><em>edit</em> picorer le commit en le modifiant</li>
+						<li><em>squash</em> prendre le commit, mais le fusionner</li>
+						<li><em>fixup</em> "squash", en éliminant le message</li>
+						<li><em>exec</em> lancer la commande (reste de la ligne) dans un shell</li>
+						<li><em>drop</em> supprimer le commit</li>
+					</ul>
+				</section>
+				<section>
+					<h2>commit -p</h2>
+				</section>
+				<section>
+					<h2>reflog</h2>
 				</section>
 			</section>
 
