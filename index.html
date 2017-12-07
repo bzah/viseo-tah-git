@@ -64,7 +64,7 @@
 			<!-- Partie 3 - Clients -->
 			<section>
 				<section>
-					<h2 style="color: #5d5d5d;">GUI Git Clients </h2>
+					<h2 style="color: #5d5d5d;">Les GUI avec Git</h2>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -90,7 +90,7 @@
 					<h3>Les Inconvénients</h3>
 					<ul>
 						<li>On sait pas ce qu'il y a sous le capot</li>
-						<li>Compte fabriquant nécessaire</li>
+						<li>Besoin d'un compte fabriquant</li>
 						<li>Erreurs pas toujours compréhensibles</li>
 						<li>Manque de fonctionnalités...</li>
 					</ul>
@@ -107,7 +107,8 @@
 				</section>
 				<section>
 					<h2>Historique</h2>
-					<pre><code data-trim># git log
+					<pre>
+						<code data-trim># git log
 commit 0e40ba54b03f04c3786ea1e36542db248279797b
 Author: barmic <yoko.java@gmail.com>
 Date:   Fri Sep 1 11:57:08 2017 +0200
@@ -137,7 +138,8 @@ Author: barmic <yoko.java@gmail.com>
 Date:   Fri Sep 1 11:44:51 2017 +0200
 
 	JS improve		
-</code></pre>
+</code>
+</pre>
 				</section>
 				<section>
 					<h2>Historique</h2>
@@ -209,11 +211,66 @@ pick 0e40ba5 Licence
 			<!-- Part 7 Théorie -->
 			<section>
 				<section>
-					<h2>Théorie</h2>
+					<h2>Git, c'est magique!</h2>
+					TODO : ajouter une licorne
 					<aside class="notes">
-						<h2>Pierre</h2>
-						TODO
 					</aside>
+				</section>
+				<section>
+					<h2>Avez vous déjà vu ...</h2>
+					<pre>
+						<code data-trim>
+	commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
+	Author: Michel <michel.barret@gmail.com>
+	Date:   Wed Dec 6 12:40:14 2017 +0100
+	
+	Init presentation
+						</code>
+							</pre>
+				</section>
+				<section>
+					<h2>C'est quoi un repo git ?</h2>
+				</section>
+				<section>
+					<pre><code>
+.
+│   main.java
+│
+├───.git
+└───resources
+		logo.png
+				</code></pre>
+				</section>
+
+				<section>
+					<pre><code>
+TODO : représenter l'arbre des hashs
+					</code></pre>
+				</section>
+				<section>
+					<h2>git hash</h2>
+					<img src="img/git-hache.png" alt="hash" width="300px" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Qu'est ce qu'on hash ?</h2>
+				</section>
+				<section>
+					Les fichiers (blob)
+					<pre>
+						<code>
+echo -e 'blob' + file_length + '\0' + file_content | shasum 
+						</code>
+					</pre>
+				</section>
+				<section>
+					Les tree objects
+					<pre>
+						<code width="150%">
+			TODO
+						</code>
+					</pre>
 				</section>
 			</section>
 
