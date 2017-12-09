@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>Git</title>
@@ -31,9 +32,12 @@
 					</ul>
 					<aside class="notes">
 						<ol>
-							<li><em>Découvrir</em> une techno. Pas le temps d'approfondir.</li>
-							<li><em>Appliquer</em> sur un cas "réel". simplifié pour l'exemple.</li>
-							<li><em>Partager</em> l'expérience. Comment elle nous a servi? Ce qu'on en retient de bien, de moins bien</li>
+							<li>
+								<em>Découvrir</em> une techno. Pas le temps d'approfondir.</li>
+							<li>
+								<em>Appliquer</em> sur un cas "réel". simplifié pour l'exemple.</li>
+							<li>
+								<em>Partager</em> l'expérience. Comment elle nous a servi? Ce qu'on en retient de bien, de moins bien</li>
 						</ol>
 					</aside>
 				</section>
@@ -60,9 +64,36 @@
 			<!-- Partie 3 - Clients -->
 			<section>
 				<section>
-					<h2 style="color: #5d5d5d;">Clients</h2>
+					<h2 style="color: #5d5d5d;">Les GUI avec Git</h2>
 					<aside class="notes">
 					</aside>
+				</section>
+				<section>
+					<h2 style="color: #5d5d5d;">Kraken</h2>
+					<img src="img/kraken.png" alt="kraken" width="1000px">
+				</section>
+				<section>
+					<h2 style="color: #5d5d5d;">SourceTree</h2>
+					<img src="img/SourceTree.png" alt="sourceTree" width="1000px">
+				</section>
+				<section>
+					<h3>Les Avantages</h3>
+					<h4>Git pour les null(s)</h4>
+					<ul>
+						<li>Facile à prendre en main</li>
+						<li>Pas de commandes à apprendre</li>
+						<li>Représentation visuel de "l'arbre GIT"</li>
+						<li>C'est quand même pas moche...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Les Inconvénients</h3>
+					<ul>
+						<li>On sait pas ce qu'il y a sous le capot</li>
+						<li>Besoin d'un compte fabriquant</li>
+						<li>Erreurs pas toujours compréhensibles</li>
+						<li>Manque de fonctionnalités...</li>
+					</ul>
 				</section>
 			</section>
 
@@ -76,7 +107,8 @@
 				</section>
 				<section>
 					<h2>Historique</h2>
-<pre><code data-trim># git log
+					<pre>
+						<code data-trim># git log
 commit 0e40ba54b03f04c3786ea1e36542db248279797b
 Author: barmic <yoko.java@gmail.com>
 Date:   Fri Sep 1 11:57:08 2017 +0200
@@ -106,12 +138,22 @@ Author: barmic <yoko.java@gmail.com>
 Date:   Fri Sep 1 11:44:51 2017 +0200
 
 	JS improve		
+<<<<<<< HEAD
 </code></pre>
 </section>
 <section>
 	<h2>Historique</h2>
 	<pre><code>git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit</code></pre>
 <pre><code>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
+=======
+</code>
+</pre>
+				</section>
+				<section>
+					<h2>Historique</h2>
+					<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
+>>>>>>> 16a79d88424ab5b81d595520871fb9683490b48f
 * c0bd721 - Licence (il y a 3 mois) &lt;barmic>
 * 284c025 - Use https (il y a 3 mois) &lt;barmic>
 * c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
@@ -125,20 +167,27 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				</section>
 				<section>
 					<h2>Rebase intéractif</h2>
-<pre><code>pick 3d057a6 JS improve
+					<pre><code>pick 3d057a6 JS improve
 pick c6b76cf Import highlight
 pick 284c025 Use https
 pick c0bd721 Licence
 pick 0e40ba5 Licence
 </code></pre>
 					<ul>
-						<li><em>pick</em> picorer le commit</li> 
-						<li><em>reword</em> picorer le commit, mais reformuler</li>
-						<li><em>edit</em> picorer le commit en le modifiant</li>
-						<li><em>squash</em> prendre le commit, mais le fusionner</li>
-						<li><em>fixup</em> "squash", en éliminant le message</li>
-						<li><em>exec</em> lancer la commande (reste de la ligne) dans un shell</li>
-						<li><em>drop</em> supprimer le commit</li>
+						<li>
+							<em>pick</em> picorer le commit</li>
+						<li>
+							<em>reword</em> picorer le commit, mais reformuler</li>
+						<li>
+							<em>edit</em> picorer le commit en le modifiant</li>
+						<li>
+							<em>squash</em> prendre le commit, mais le fusionner</li>
+						<li>
+							<em>fixup</em> "squash", en éliminant le message</li>
+						<li>
+							<em>exec</em> lancer la commande (reste de la ligne) dans un shell</li>
+						<li>
+							<em>drop</em> supprimer le commit</li>
 					</ul>
 				</section>
 				<section>
@@ -156,7 +205,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 			</section>
 
-				<!-- Part 5 outils autour de git -->
+			<!-- Part 5 outils autour de git -->
 			<section>
 				<section>
 					<h2>Autour de git</h2>
@@ -178,11 +227,66 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<!-- Part 7 Théorie -->
 			<section>
 				<section>
-					<h2>Théorie</h2>
+					<h2>Git, c'est magique!</h2>
+					TODO : ajouter une licorne
 					<aside class="notes">
-						<h2>Pierre</h2>
-						TODO
 					</aside>
+				</section>
+				<section>
+					<h2>Avez vous déjà vu ...</h2>
+					<pre>
+						<code data-trim>
+	commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
+	Author: Michel <michel.barret@gmail.com>
+	Date:   Wed Dec 6 12:40:14 2017 +0100
+	
+	Init presentation
+						</code>
+							</pre>
+				</section>
+				<section>
+					<h2>C'est quoi un repo git ?</h2>
+				</section>
+				<section>
+					<pre><code>
+.
+│   main.java
+│
+├───.git
+└───resources
+		logo.png
+				</code></pre>
+				</section>
+
+				<section>
+					<pre><code>
+TODO : représenter l'arbre des hashs
+					</code></pre>
+				</section>
+				<section>
+					<h2>git hash</h2>
+					<img src="img/git-hache.png" alt="hash" width="300px" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Qu'est ce qu'on hash ?</h2>
+				</section>
+				<section>
+					Les fichiers (blob)
+					<pre>
+						<code>
+echo -e 'blob' + file_length + '\0' + file_content | shasum 
+						</code>
+					</pre>
+				</section>
+				<section>
+					Les tree objects
+					<pre>
+						<code width="150%">
+			TODO
+						</code>
+					</pre>
 				</section>
 			</section>
 
@@ -195,7 +299,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 
 			<!-- Part 9 Ciao ! -->
 			<section>
-                <section>
+				<section>
 					<h2>Joyeux Noël !</h2>
 					<aside class="notes">
 					</aside>
@@ -214,7 +318,16 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<section>
 				<h2>Licence</h2>
 				Pour ce qui concerne tous les contenus que nous avons produits dans cette présentation :
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir les subtilités de Cassandra</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://barmic.github.io/viseo-take-an-hour_cassandra" property="cc:attributionName" rel="cc:attributionURL">Viseo -  Pierre Bourret & Michel Barret</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International</a>.<br />Fondé(e) sur une œuvre à <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/barmic/viseo-take-an-hour_cassandra.git" rel="dct:source">https://github.com/barmic/viseo-take-an-hour_cassandra.git</a>.
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+				</a>
+				<br />
+				<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir les subtilités de Cassandra</span> de
+				<a xmlns:cc="http://creativecommons.org/ns#" href="https://barmic.github.io/viseo-take-an-hour_cassandra" property="cc:attributionName"
+				 rel="cc:attributionURL">Viseo - Abel Aoun & Michel Barret</a> est mis à disposition selon les termes de la
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International</a>.
+				<br />Fondé(e) sur une œuvre à
+				<a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/barmic/viseo-take-an-hour_cassandra.git" rel="dct:source">https://github.com/barmic/viseo-take-an-hour_cassandra.git</a>.
 			</section>
 		</div>
 	</div>
@@ -224,50 +337,50 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 	<script>
 		// Required, even if empty.
 		Reveal.initialize({
-            dependencies: [
-                { src: 'plugin/notes/notes.js', async: true },
-                { src: 'plugin/tagcloud/tagcloud.js', async: true }
-            ],
-            // slideNumber: 'c/t', // Absolute slide numbers (with total).
-            slideNumber: true, // Enable hierarchical slide numbers
-            history: true // Enable slide number in URL fragment
+			dependencies: [
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/tagcloud/tagcloud.js', async: true }
+			],
+			// slideNumber: 'c/t', // Absolute slide numbers (with total).
+			slideNumber: true, // Enable hierarchical slide numbers
+			history: true // Enable slide number in URL fragment
 		});
 		// Automatic fragment numbering
-var fragmentNumbering = function ( event ) {
-  var fragments = $(event.currentSlide).find('.fragment');
-  var order = new Array(fragments.length);
+		var fragmentNumbering = function (event) {
+			var fragments = $(event.currentSlide).find('.fragment');
+			var order = new Array(fragments.length);
 
-  $(fragments).filter('[data-index]').each( function () {
-    var index = parseInt($(this).attr('data-index')) - 1;
-    if (index < 0 || index >= order.length) {
-      alert('Invalid data-index: ' + index);
-      return;
-    }
-    if (typeof order[index] == 'undefined') {
-      order[index] = [ $(this) ];
-    } else {
-      order[index].push($(this));
-    }
-  });
+			$(fragments).filter('[data-index]').each(function () {
+				var index = parseInt($(this).attr('data-index')) - 1;
+				if (index < 0 || index >= order.length) {
+					alert('Invalid data-index: ' + index);
+					return;
+				}
+				if (typeof order[index] == 'undefined') {
+					order[index] = [$(this)];
+				} else {
+					order[index].push($(this));
+				}
+			});
 
-  var index = 0;
-  $(fragments).not('[data-index]').each( function () {
-    while(typeof order[index] != 'undefined') {
-      index = index + 1;
-    }
-    order[index] = [ $(this) ];
-  });
+			var index = 0;
+			$(fragments).not('[data-index]').each(function () {
+				while (typeof order[index] != 'undefined') {
+					index = index + 1;
+				}
+				order[index] = [$(this)];
+			});
 
-  $(order).each( function (index) {
-    $(this).each( function () {
-      $(this).attr('data-fragment-index', index);
-    })
-  });
-};
-Reveal.addEventListener('ready', fragmentNumbering);
-Reveal.addEventListener('slidechanged', fragmentNumbering);
+			$(order).each(function (index) {
+				$(this).each(function () {
+					$(this).attr('data-fragment-index', index);
+				})
+			});
+		};
+		Reveal.addEventListener('ready', fragmentNumbering);
+		Reveal.addEventListener('slidechanged', fragmentNumbering);
 
-hljs.initHighlightingOnLoad();
+		hljs.initHighlightingOnLoad();
 
 		function vidplay() {
 			var video = document.getElementById("Video1");
@@ -277,4 +390,5 @@ hljs.initHighlightingOnLoad();
 		}
 	</script>
 </body>
+
 </html>
