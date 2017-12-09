@@ -100,16 +100,15 @@
 			<!-- Partie 4 - Commandes pour aller plus loin -->
 			<section>
 				<section>
-					<h2>Commande</h2>
+					<h2>Commandes</h2>
 					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
 					<h2>Historique</h2>
-					<pre>
-						<code data-trim># git log
-commit 0e40ba54b03f04c3786ea1e36542db248279797b
+					<pre><code data-trim># git log</code></pre>
+					<pre><code data-trim>commit 0e40ba54b03f04c3786ea1e36542db248279797b
 Author: barmic <michel.barret@gmail.com>
 Date:   Fri Sep 1 11:57:08 2017 +0200
 
@@ -138,26 +137,45 @@ Author: barmic <michel.barret@gmail.com>
 Date:   Fri Sep 1 11:44:51 2017 +0200
 
 	JS improve		
-<<<<<<< HEAD
-</code></pre>
-</section>
-<section>
-	<h2>Historique</h2>
-	<pre><code>git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit</code></pre>
-<pre><code>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
-=======
 </code>
 </pre>
 				</section>
 				<section>
 					<h2>Historique</h2>
-					<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
->>>>>>> 16a79d88424ab5b81d595520871fb9683490b48f
+					<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit</code></pre>
+					<pre><code data-trim>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
 * c0bd721 - Licence (il y a 3 mois) &lt;barmic>
 * 284c025 - Use https (il y a 3 mois) &lt;barmic>
 * c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
 * 3d057a6 - JS improve (il y a 3 mois) &lt;barmic>
+</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Historique</h2>
+					<pre><code># git lg  --stat</code></pre>
+					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>| 
+|  index.html | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+
+* c0bd721 - Licence (il y a 3 mois) <barmic>| 
+|  index.html | 6 ++++++
+|  1 file changed, 6 insertions(+)
+</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Historique</h2>
+					<pre><code># git lg  --stat</code></pre>
+					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>| 
+|  index.html | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+
+* c0bd721 - Licence (il y a 3 mois) <barmic>| 
+|  index.html | 6 ++++++
+|  1 file changed, 6 insertions(+)
 </code></pre>
 					<aside class="notes">
 					</aside>
@@ -168,27 +186,12 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				<section>
 					<h2>Rebase intéractif</h2>
 					<pre><code>pick 3d057a6 JS improve
-pick c6b76cf Import highlight
-pick 284c025 Use https
-pick c0bd721 Licence
-pick 0e40ba5 Licence
+rework c6b76cf Import highlight
+edit 284c025 Use https
+squash c0bd721 Licence
+exec apt-get moo
+drop 0e40ba5 Licence
 </code></pre>
-					<ul>
-						<li>
-							<em>pick</em> picorer le commit</li>
-						<li>
-							<em>reword</em> picorer le commit, mais reformuler</li>
-						<li>
-							<em>edit</em> picorer le commit en le modifiant</li>
-						<li>
-							<em>squash</em> prendre le commit, mais le fusionner</li>
-						<li>
-							<em>fixup</em> "squash", en éliminant le message</li>
-						<li>
-							<em>exec</em> lancer la commande (reste de la ligne) dans un shell</li>
-						<li>
-							<em>drop</em> supprimer le commit</li>
-					</ul>
 				</section>
 				<section>
 					<h2>commit -p</h2>
