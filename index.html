@@ -90,6 +90,7 @@
 					<aside class="notes">
 					</aside>
 				</section>
+				<section data-background="img/tig.png" data-background-size="80%"></section>
 				<section>
 					<h3>Avantages</h3>
 					<h4>Git pour les null(s)</h4>
@@ -154,27 +155,17 @@
 pick 2 Continue my branch1
 </code></pre>
 					<aside class="notes">
+						<ul>
+							<li>pick</li>
+							<li>reword</li>
+							<li>squash</li>
+							<li>edit</li>
+							<li>drop</li>
+						</ul>
 					</aside>
 				</section>
 				<!--
-				<section>
-					<h2>Historique</h2>
-					<pre><code>[alias]
-  out = log @{u}..
-  in  = log ..@{u}</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Rebase intéractif</h2>
-					<pre><code>pick   3d057a6 JS improve
-rework c6b76cf Import highlight
-edit   284c025 Use https
-squash c0bd721 Licence
 exec apt-get moo
-drop   0e40ba5 Licence
-</code></pre>
-				</section>
 			-->
 				<section>
 					<h2>Journal de références</h2>
@@ -223,14 +214,9 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					<h2>Alias</h2>
 					<pre><code>[alias]
   st = status --short --branch
-  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -</code></pre>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
-				</section>
-				<section>
-					<h2>Plugin</h2>
-					<pre><code></code></pre>
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+  out = log @{u}..
+  in  = log ..@{u}</code></pre>
 					<aside class="notes">
 						<h2>Michel</h2>
 					</aside>
@@ -241,6 +227,33 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 						<li>pre-commit</li>
 						<li>prepare-commit-msg</li>
 						<li>post-commit</li>
+					</ul>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Plugin</h2>
+					<pre><code>#!/bin/zsh
+							
+c=$(git branch | grep -c "$1")
+							
+if [[ "$c" -eq 1 ]]; then
+	git checkout $(git branch | grep "$1")
+else
+    echo "'$1' is ambigus"
+fi</code></pre>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Plugin</h2>
+					<ul>
+						<li>git-svn</li>
+						<li>octopussy</li>
+						<li>git-git</li>
+						<li><a href="https://github.com/unixorn/git-extra-commands#included-scripts"/>pleins d'autres</a></li>
 					</ul>
 					<aside class="notes">
 						<h2>Michel</h2>
