@@ -117,7 +117,7 @@
 					<h2>Commandes</h2>
 					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
 					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
-							<source src="video/saveme.mp4" type="video/mp4" />
+						<source src="video/saveme.mp4" type="video/mp4" />
 					</video>
 					<aside class="notes">
 					</aside>
@@ -185,24 +185,14 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				</section>
 				<section>
 					<h2>Historique</h2>
-<<<<<<< HEAD
-					<pre><code># git lg  --stat</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
-|  index.html | 2 +-
-|  1 file changed, 1 insertion(+), 1 deletion(-)
-
-* c0bd721 - Licence (il y a 3 mois) <barmic>|
-|  index.html | 6 ++++++
-|  1 file changed, 6 insertions(+)
-</code></pre> =======
-						<img class="plain strech" src="img/flow.svg" />
+					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
 					<h2>Historique</h2>
 					<pre><code>1..HEAD</code></pre>
-					<img class="plain strech" src="img/flow1_HEAD.svg" /> >>>>>>> 82b74e6e35fc55d04909b4286a61d17123700807
+					<img class="plain strech" src="img/flow1_HEAD.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
@@ -236,7 +226,7 @@ drop   0e40ba5 Licence
 				</section>
 				<section>
 					<h2>Journal de références</h2>
-<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
+					<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
 0f8dde4 HEAD@{1}: rebase -i (squash): first + third
 606813c HEAD@{2}: rebase -i (start): checkout f07ec95
 b8fed7c HEAD@{3}: commit: third
@@ -263,7 +253,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<h2>stacked git</h2>
-			</section>
+				</section>
 			</section>
 
 			<!-- Part 6 Créer son plugin -->
@@ -271,7 +261,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				<section>
 					<h2>Customiser git</h2>
 					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
-							<source src="video/config.mp4" type="video/mp4" />
+						<source src="video/config.mp4" type="video/mp4" />
 					</video>
 					<aside class="notes">
 						<h2>Michel</h2>
@@ -279,7 +269,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<h2>Alias</h2>
-<pre><code>[alias]
+					<pre><code>[alias]
   st = status --short --branch
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -</code></pre>
 					<aside class="notes">
@@ -288,7 +278,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<h2>Plugin</h2>
-<pre><code></code></pre>
+					<pre><code></code></pre>
 					<aside class="notes">
 						<h2>Michel</h2>
 					</aside>
@@ -314,7 +304,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<h2>Avez vous déjà vu ...</h2>
-						<p>Un commit</p>
+					<p>Un commit</p>
 					<pre>
 						<code data-trim>
 	commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
@@ -352,9 +342,9 @@ sha1(
 				</code>
 			</pre>
 				</section>
-	<section>
-		<h2>Hash-Of-Entire-Working-Directory</h2>
-	</section>
+				<section>
+					<h2>Hash-Of-Entire-Working-Directory</h2>
+				</section>
 				<section>
 					<pre><code>
 .
@@ -402,8 +392,8 @@ aa1b2fb696a831c89c53f787e03d863691d2b671
 					</aside>
 				</section>
 				<section>
-						<h2>Hash d'un commit</h2>
-						<pre>
+					<h2>Hash d'un commit</h2>
+					<pre>
 							<code data-trim>
 sha1(
 meta data
@@ -417,17 +407,17 @@ meta data
 )
 					</code>
 				</pre>
-				<aside class="notes">
-					Enfin, l'intégrité même	de l'historique est conservé grace au hash du commit parent présent dans ses commits enfants.
-				</aside>
-					</section>
-					</section>
+					<aside class="notes">
+						Enfin, l'intégrité même de l'historique est conservé grace au hash du commit parent présent dans ses commits enfants.
+					</aside>
+				</section>
+			</section>
 			<!-- Part 8 Gource -->
 			<section>
 				<section>
 					<h2>Gource</h2>
 					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
-							<source src="video/gource.mp4" type="video/mp4" />
+						<source src="video/gource.mp4" type="video/mp4" />
 					</video>
 				</section>
 			</section>
