@@ -3,13 +3,15 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Git</title>
+	<title>TupperGit</title>
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="lib/gitgraph/gitgraph.css" />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/solarized-light.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+	<script src="lib/gitgraph/gitgraph.min.js"></script>
 </head>
 
 <body>
@@ -114,6 +116,9 @@
 				<section>
 					<h2>Commandes</h2>
 					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
+					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+							<source src="video/saveme.mp4" type="video/mp4" />
+					</video>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -154,7 +159,7 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				</section>
 				<section>
 					<h2>Historique</h2>
-					<pre><code># git log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit</code></pre>
+					<pre><code>git log  --color --graph --abbrev-commit --pretty=format:'%h - %d %s (%cr) <%an>'</code></pre>
 					<pre><code data-trim>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
 * c0bd721 - Licence (il y a 3 mois) &lt;barmic>
 * 284c025 - Use https (il y a 3 mois) &lt;barmic>
@@ -180,6 +185,7 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				</section>
 				<section>
 					<h2>Historique</h2>
+<<<<<<< HEAD
 					<pre><code># git lg  --stat</code></pre>
 					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
 |  index.html | 2 +-
@@ -189,20 +195,42 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 |  index.html | 6 ++++++
 |  1 file changed, 6 insertions(+)
 </code></pre>
+=======
+					<img class="plain strech" src="img/flow.svg"/>
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Cherry pick</h2>
+					<h2>Historique</h2>
+					<pre><code>1..HEAD</code></pre>
+					<img class="plain strech" src="img/flow1_HEAD.svg"/>
+>>>>>>> 82b74e6e35fc55d04909b4286a61d17123700807
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Historique</h2>
+					<pre><code>HEAD..master</code></pre>
+					<img class="plain strech" src="img/flowHEAD_master.svg"/>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Historique</h2>
+					<pre><code>[alias]
+  out = log @{u}..
+  in  = log ..@{u}</code></pre>
+					<aside class="notes">
+					</aside>
 				</section>
 				<section>
 					<h2>Rebase intéractif</h2>
-					<pre><code>pick 3d057a6 JS improve
+					<pre><code>pick   3d057a6 JS improve
 rework c6b76cf Import highlight
-edit 284c025 Use https
+edit   284c025 Use https
 squash c0bd721 Licence
 exec apt-get moo
-drop 0e40ba5 Licence
+drop   0e40ba5 Licence
 </code></pre>
 				</section>
 				<section>
@@ -240,11 +268,37 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<!-- Part 6 Créer son plugin -->
 			<section>
 				<section>
-					<h2>Créer son plugin</h2>
-					<!--
-						- créer une sous-commande
-						- utiliser les hooks
-					-->
+					<h2>Customiser git</h2>
+					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+							<source src="video/config.mp4" type="video/mp4" />
+					</video>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Alias</h2>
+<pre><code>[alias]
+  st = status --short --branch
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -</code></pre>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Plugin</h2>
+<pre><code></code></pre>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Hook</h2>
+					<ul>
+						<li>pre-commit</li>
+						<li>prepare-commit-msg</li>
+						<li>post-commit</li>
+					</ul>
 					<aside class="notes">
 						<h2>Michel</h2>
 					</aside>
@@ -350,6 +404,9 @@ aa1b2fb696a831c89c53f787e03d863691d2b671
 			<section>
 				<section>
 					<h2>Gource</h2>
+					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+							<source src="video/gource.mp4" type="video/mp4" />
+					</video>
 				</section>
 			</section>
 
