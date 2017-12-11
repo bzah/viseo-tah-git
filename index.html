@@ -64,17 +64,29 @@
 			<!-- Partie 3 - Clients -->
 			<section>
 				<section>
-					<h2 style="color: #5d5d5d;">Les GUI avec Git</h2>
+					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2 style="color: #5d5d5d;">Kraken</h2>
-					<img src="img/kraken.png" alt="kraken" width="1000px">
+					<h3 style="color: #5d5d5d;">SourceTree</h3>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section data-background="img/SourceTree.png" data-background-size="80%">
 				</section>
 				<section>
-					<h2 style="color: #5d5d5d;">SourceTree</h2>
-					<img src="img/SourceTree.png" alt="sourceTree" width="1000px">
+					<h3 style="color: #5d5d5d;">Kraken</h3>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section data-background="img/kraken.png" data-background-size="80%">
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">Tig</h3>
+					<h4 style="color: #5d5d5d;">ncurses-based text-mode interface</h4>
+					<aside class="notes">
+					</aside>
 				</section>
 				<section>
 					<h3>Les Avantages</h3>
@@ -136,7 +148,7 @@ commit 3d057a69c40ab97f2debb29b0c15557eb34e30e6
 Author: barmic <michel.barret@gmail.com>
 Date:   Fri Sep 1 11:44:51 2017 +0200
 
-	JS improve		
+	JS improve
 </code>
 </pre>
 				</section>
@@ -155,11 +167,11 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				<section>
 					<h2>Historique</h2>
 					<pre><code># git lg  --stat</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>| 
+					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
 |  index.html | 2 +-
 |  1 file changed, 1 insertion(+), 1 deletion(-)
 
-* c0bd721 - Licence (il y a 3 mois) <barmic>| 
+* c0bd721 - Licence (il y a 3 mois) <barmic>|
 |  index.html | 6 ++++++
 |  1 file changed, 6 insertions(+)
 </code></pre>
@@ -169,11 +181,11 @@ Date:   Fri Sep 1 11:44:51 2017 +0200
 				<section>
 					<h2>Historique</h2>
 					<pre><code># git lg  --stat</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>| 
+					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
 |  index.html | 2 +-
 |  1 file changed, 1 insertion(+), 1 deletion(-)
 
-* c0bd721 - Licence (il y a 3 mois) <barmic>| 
+* c0bd721 - Licence (il y a 3 mois) <barmic>|
 |  index.html | 6 ++++++
 |  1 file changed, 6 insertions(+)
 </code></pre>
@@ -211,9 +223,17 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<!-- Part 5 outils autour de git -->
 			<section>
 				<section>
-					<h2>Autour de git</h2>
+					<h2>Les outils autour de git</h2>
 					<aside class="notes">
 					</aside>
+				</section>
+				<section>
+					<h2>Repository management services</h2>
+					<h4>Github, Gitlab, Bitbucket, Gogs, Coding...</h4>
+				</section>
+				<section>
+					<h2>Intégration continue</h2>
+					<h4>Jenkins, VSTS...</h4>
 				</section>
 			</section>
 
@@ -235,66 +255,95 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<section>
 				<section>
 					<h2>Git, c'est magique!</h2>
-					TODO : ajouter une licorne
-					<aside class="notes">
-					</aside>
+					<img src="img/unicorn.png"/ width="40%">
 				</section>
 				<section>
 					<h2>Avez vous déjà vu ...</h2>
+						<p>Un commit</p>
 					<pre>
 						<code data-trim>
 	commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
 	Author: Michel <michel.barret@gmail.com>
 	Date:   Wed Dec 6 12:40:14 2017 +0100
-	
-	Init presentation
-						</code>
-							</pre>
-				</section>
-				<section>
-					<h2>C'est quoi un repo git ?</h2>
-				</section>
-				<section>
-					<pre><code>
-.
-│   main.java
-│
-├───.git
-└───resources
-		logo.png
-				</code></pre>
-				</section>
 
-				<section>
-					<pre><code>
-TODO : représenter l'arbre des hashs
-					</code></pre>
+	Init presentation
+</code>
+</pre>
+					<aside class="notes">
+						Vous avez sans doute déja vu un commit. Vous vous etes déja demandé pourquoi les numéros de commit sont aussi long ?
+						Et puis, pouquoi est ce que deux commit consécutifs n'ont pas un simple incrément dans leurs numéros ?
+					</aside>
 				</section>
 				<section>
 					<h2>git hash</h2>
-					<img src="img/git-hache.png" alt="hash" width="300px" />
+					<h3>algorithme sha-1</h3>
+					<img src="img/git-hache.png" alt="hash"/>
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Qu'est ce qu'on hash ?</h2>
+					<h2>hash d'un commit</h2>
+					<pre>
+						<code data-trim>
+sha1(
+  meta data
+      commit_message
+      commiter
+      commit_date
+      author
+      authoring_date
+  "Hash-Of-Entire-Working-Directory"
+)
+				</code>
+			</pre>
+				</section>
+
+	<section>
+		<h2>Hash-Of-Entire-Working-Directory</h2>
+	</section>
+				<section>
+					<pre><code>
+.
+│ main.java
+│
+├───.git
+└───resources
+     logo.png
+				</code></pre>
 				</section>
 				<section>
-					Les fichiers (blob)
+					<img src="img/git-tree.png" alt="tree"/>
+					<aside class="notes">
+							Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git.
+							Ces blobs passent par le fonction de hash et en résulte un identifiant unique.
+							Les repertoires sont représentés par des arbres (tree).
+							Ils servent de dictionnaire entre les noms des fichiers contenus dans un repertoire et leurs hashs respectifs.
+					</aside>
+				</section>
+				<section>
+					<h2>hash d'un commit</h2>
 					<pre>
 						<code>
-echo -e 'blob' + file_length + '\0' + file_content | shasum 
-						</code>
-					</pre>
+sha1(
+
+"Init presentation"
+
+michel.barret@viseo.com
+Wed Dec 6 12:40:14 2017 +0100
+
+michel.barret@viseo.com
+Wed Dec 6 12:40:14 2017 +0100
+
+aa1b2fb696a831c89c53f787e03d863691d2b671
+)
+				</code>
+			</pre>
 				</section>
 				<section>
-					Les tree objects
-					<pre>
-						<code width="150%">
-			TODO
-						</code>
-					</pre>
-				</section>
+					<h2>Mais ça sert à quoi ?</h2>
+<h3>Conserver l'intégrité des données</h3>
+					</section>
+
 			</section>
 
 			<!-- Part 8 Gource -->
