@@ -123,86 +123,40 @@
 					</aside>
 				</section>
 				<section>
-					<h2>Historique</h2>
-					<pre><code data-trim># git log</code></pre>
-					<pre><code data-trim>commit 0e40ba54b03f04c3786ea1e36542db248279797b
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:57:08 2017 +0200
-
-	Licence
-
-commit c0bd721d8ef471c09bd1f21013dc8eb9ab7f7928
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:54:12 2017 +0200
-
-	Licence
-
-commit 284c025e251d7220bb787744aee8fab933bb5743
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:48:04 2017 +0200
-
-	Use https
-
-commit c6b76cf77fdfb328c07ad1ee9f2657b045b52a47
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:46:54 2017 +0200
-
-	Import highlight
-
-commit 3d057a69c40ab97f2debb29b0c15557eb34e30e6
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:44:51 2017 +0200
-
-	JS improve
-</code>
-</pre>
-				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code>git log  --color --graph --abbrev-commit --pretty=format:'%h - %d %s (%cr) <%an>'</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
-* c0bd721 - Licence (il y a 3 mois) &lt;barmic>
-* 284c025 - Use https (il y a 3 mois) &lt;barmic>
-* c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
-* 3d057a6 - JS improve (il y a 3 mois) &lt;barmic>
-</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code># git lg  --stat</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
-|  index.html | 2 +-
-|  1 file changed, 1 insertion(+), 1 deletion(-)
-
-* c0bd721 - Licence (il y a 3 mois) <barmic>|
-|  index.html | 6 ++++++
-|  1 file changed, 6 insertions(+)
-</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Historique</h2>
+					<h2>Commits et branches</h2>
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Historique</h2>
-					<pre><code>1..HEAD</code></pre>
-					<img class="plain strech" src="img/flow1_HEAD.svg" />
+					<h2>Rebase</h2>
+					<pre><code>git rebase master</code></pre>
+					<img class="plain strech" src="img/rebase1.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Historique</h2>
-					<pre><code>HEAD..master</code></pre>
-					<img class="plain strech" src="img/flowHEAD_master.svg" />
+					<h2>Rebase</h2>
+					<img class="plain strech" src="img/rebase2.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
+				<section>
+					<h2>Rebase</h2>
+					<img class="plain strech" src="img/rebase3.svg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Intéractif</h2>
+					<pre><code>git rebase -i master</code></pre>
+					<pre><code>pick 1 Start my branch1
+pick 2 Continue my branch1
+</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<!--
 				<section>
 					<h2>Historique</h2>
 					<pre><code>[alias]
@@ -221,9 +175,7 @@ exec apt-get moo
 drop   0e40ba5 Licence
 </code></pre>
 				</section>
-				<section>
-					<h2>commit -p</h2>
-				</section>
+			-->
 				<section>
 					<h2>Journal de références</h2>
 					<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
