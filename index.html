@@ -24,7 +24,6 @@
 						<h2></h2>
 					</aside>
 				</section>
-
 				<section>
 					<img class="plain" src="img/you_are_here.png" height="150">
 					<h3>Qu'est-ce qu'on fait ici ?</h3>
@@ -68,7 +67,7 @@
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-background="img/SourceTree.png" data-background-size="80%">
+				<section data-background="img/sourceTree.png" data-background-size="80%">
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">Kraken</h3>
@@ -181,11 +180,15 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					<h4>Github, Gitlab, Bitbucket, Gogs, Coding...</h4>
 				</section>
 				<section>
-					<h2>Intégration continue</h2>
-					<h4>Jenkins, VSTS...</h4>
+					<img src="img/gitlab-logo.png" alt="gitlab" width="30%">
+				</section>
+				<section data-background="img/Capture-gitLab.png" data-background-size="98%">
+				</section>
+				<section data-background="img/Capture-gitLab2.png" data-background-size="98%">
 				</section>
 				<section>
-					<h2>stacked git</h2>
+					<h2>Intégration continue</h2>
+					<h4>Jenkins, VSTS, Gitlab-CI...</h4>
 				</section>
 			</section>
 
@@ -264,11 +267,11 @@ fi</code></pre>
 					<p>Un commit</p>
 					<pre>
 						<code data-trim>
-	commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
-	Author: Michel <michel.barret@gmail.com>
-	Date:   Wed Dec 6 12:40:14 2017 +0100
+ commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
+ Author: Michel michel.barret@viseo.com
+ Date:   Wed Dec 6 12:40:14 2017 +0100
 
-	Init presentation
+	"Init presentation"
 </code>
 </pre>
 					<aside class="notes">
@@ -309,7 +312,9 @@ sha1(
 │
 ├───.git
 └───resources
-     logo.png
+│     logo.png
+└───components
+      ...
 				</code></pre>
 				</section>
 				<section>
@@ -344,7 +349,7 @@ aa1b2fb696a831c89c53f787e03d863691d2b671
 				</section>
 				<section>
 					<h2>Conserver
-						<span style="color: darkslategray">l'intégrité</span> des données
+						<span style="color: coral">l'intégrité</span> des données
 					</h2>
 					<h3></h3>
 					<aside class="notes">
@@ -364,8 +369,8 @@ sha1(
  commit_date
  author
  authoring_date
- Hash-Of-Entire-Working-Directory	
- <span style="background-color: whitesmoke">"Parent commit hash" 89c53f787e1b2fb691c03d863aa6a83691d2b671</span>
+ Hash-Of-Entire-Working-Directory
+ <span style="background-color: whitesmoke">"Parent commit hash" 89c53f787e1b2fb691...</span>
 )
 					</code>
 				</pre>
