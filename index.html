@@ -109,33 +109,30 @@
 			<section>
 				<section>
 					<h2>Commandes</h2>
-					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
-						<source src="video/saveme.mp4" type="video/mp4" />
-					</video>
+					<img src="img/tech.gif" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
+				<section data-transition="none">
 					<h2>Commits et branches</h2>
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
+				<section data-transition="none">
 					<h2>Rebase</h2>
 					<pre><code>git rebase master</code></pre>
 					<img class="plain strech" src="img/rebase1.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
+				<section data-transition="none">
 					<h2>Rebase</h2>
 					<img class="plain strech" src="img/rebase2.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
+				<section data-transition="none">
 					<h2>Rebase</h2>
 					<img class="plain strech" src="img/rebase3.svg" />
 					<aside class="notes">
@@ -226,22 +223,24 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					</aside>
 				</section>
 				<section>
-					<h2>Plugin</h2>
+					<h2>Mon premier plugin !</h2>
 					<pre><code>#!/bin/zsh
 							
 c=$(git branch | grep -c "$1")
 							
 if [[ "$c" -eq 1 ]]; then
-	git checkout $(git branch | grep "$1")
+    git checkout $(git branch | grep "$1")
 else
     echo "'$1' is ambigus"
+	git branch | grep "$1"
+	exit 1
 fi</code></pre>
 					<aside class="notes">
 						<h2>Michel</h2>
 					</aside>
 				</section>
 				<section>
-					<h2>Plugin</h2>
+					<h2>Plugins</h2>
 					<ul>
 						<li>git-svn</li>
 						<li>octopussy</li>
