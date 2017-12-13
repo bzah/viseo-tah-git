@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="34cm" height="11cm" viewBox="435 79 666 203" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="23cm" height="10cm" viewBox="435 74 449 192" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs/>
   <g id="Arrière-plan">
-    <ellipse style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="458.25" cy="142" rx="22" ry="22"/>
-    <ellipse style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="579.5" cy="142" rx="22" ry="22"/>
-    <ellipse style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="700.75" cy="142" rx="22" ry="22"/>
-    <ellipse style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="822" cy="142" rx="22" ry="22"/>
-    <ellipse style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="943.25" cy="142" rx="22" ry="22"/>
-    <ellipse style="fill: #5ccd5c; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="577" cy="242" rx="22" ry="22"/>
-    <ellipse style="fill: #5ccd5c; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="698.25" cy="242" rx="22" ry="22"/>
+    <ellipse style="fill: #74bbff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="458.25" cy="142" rx="22" ry="22"/>
+    <ellipse style="fill: #74bbff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="579.5" cy="142" rx="22" ry="22"/>
+    <ellipse style="fill: #74bbff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="700.75" cy="142" rx="22" ry="22"/>
+    <ellipse style="fill: #bfbfbf; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="577" cy="242" rx="22" ry="22"/>
     <g>
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="481.236" y1="142" x2="546.778" y2="142"/>
       <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="554.278,142 544.278,147 546.778,142 544.278,137 "/>
@@ -17,14 +14,6 @@
     <g>
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="602.486" y1="142" x2="668.028" y2="142"/>
       <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="675.528,142 665.528,147 668.028,142 665.528,137 "/>
-    </g>
-    <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="723.736" y1="142" x2="789.278" y2="142"/>
-      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="796.778,142 786.778,147 789.278,142 786.778,137 "/>
-    </g>
-    <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="844.986" y1="142" x2="910.528" y2="142"/>
-      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="918.028,142 908.028,147 910.528,142 908.028,137 "/>
     </g>
     <g>
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="599.986" y1="242" x2="665.528" y2="242"/>
@@ -35,34 +24,22 @@
       <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="557.706,225.753 546.836,223.136 551.969,220.922 553.278,215.487 "/>
     </g>
     <g>
-      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="760" y="180" width="80" height="20" rx="0" ry="0"/>
-      <text font-size="14.7772" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="800" y="195.125">
-        <tspan x="800" y="195.125">HEAD</tspan>
+      <rect style="fill: #5ccd5c; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="803" y="233" width="80" height="20" rx="0" ry="0"/>
+      <text font-size="14.7772" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="843" y="248.125">
+        <tspan x="843" y="248.125">branch1</tspan>
       </text>
     </g>
     <g>
-      <rect style="fill: #5ccd5c; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="760" y="260" width="80" height="20" rx="0" ry="0"/>
-      <text font-size="14.7772" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="800" y="275.125">
-        <tspan x="800" y="275.125">branch1</tspan>
-      </text>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="801.021" y1="96.0006" x2="730.507" y2="128.349"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="723.69,131.476 730.695,122.762 730.507,128.349 734.864,131.851 "/>
     </g>
     <g>
-      <rect style="fill: #1e90ff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="1020" y="80" width="80" height="20" rx="0" ry="0"/>
-      <text font-size="14.7772" style="fill: #ffffff; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1060" y="95.125">
-        <tspan x="1060" y="95.125">master</tspan>
-      </text>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="827.502" y1="231.996" x2="727.373" y2="160.903"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="721.257,156.561 732.306,158.273 727.373,160.903 726.517,166.427 "/>
     </g>
     <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1039.97" y1="100.994" x2="973.785" y2="137.316"/>
-      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="967.21,140.924 973.571,131.73 973.785,137.316 978.382,140.496 "/>
-    </g>
-    <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="812.319" y1="258.992" x2="918.844" y2="163.807"/>
-      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="924.437,158.81 920.312,169.202 918.844,163.807 913.649,161.745 "/>
-    </g>
-    <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="832.805" y1="179.008" x2="912.475" y2="152.312"/>
-      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="919.586,149.929 911.693,157.847 912.475,152.312 908.516,148.365 "/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="810.8" y1="182.018" x2="731.514" y2="153.187"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="724.466,150.624 735.573,149.342 731.514,153.187 732.155,158.74 "/>
     </g>
     <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="458.25" y="147.875">
       <tspan x="458.25" y="147.875">A</tspan>
@@ -73,17 +50,26 @@
     <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="700.75" y="147.875">
       <tspan x="700.75" y="147.875">C</tspan>
     </text>
-    <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="822" y="147.875">
-      <tspan x="822" y="147.875">D</tspan>
-    </text>
-    <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="943.25" y="147.875">
-      <tspan x="943.25" y="147.875">E</tspan>
-    </text>
     <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="577" y="247.875">
       <tspan x="577" y="247.875">1</tspan>
     </text>
-    <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="698.25" y="247.875">
-      <tspan x="698.25" y="247.875">2</tspan>
-    </text>
+    <g>
+      <rect style="fill: #74bbff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="785" y="75" width="80" height="20" rx="0" ry="0"/>
+      <text font-size="14.7772" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="825" y="90.125">
+        <tspan x="825" y="90.125">master</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="801" y="183" width="80" height="20" rx="0" ry="0"/>
+      <text font-size="14.7772" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="841" y="198.125">
+        <tspan x="841" y="198.125">HEAD</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #bfbfbf; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="698.25" cy="242" rx="22" ry="22"/>
+      <text font-size="16.9333" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="698.25" y="247.875">
+        <tspan x="698.25" y="247.875">2</tspan>
+      </text>
+    </g>
   </g>
 </svg>

@@ -54,6 +54,12 @@
 					<aside class="notes">
 					</aside>
 				</section>
+				<section>
+					<h2>Un petit rappel ?</h2>
+					<img class="plain strech" src="img/flow.svg" />
+					<aside class="notes">
+					</aside>
+				</section>
 			</section>
 
 			<!-- Partie 3 - Clients -->
@@ -100,7 +106,6 @@
 						<li>On ne sait pas ce qu'il y a sous le capot</li>
 						<li>Besoin d'un compte fabriquant</li>
 						<li>Erreurs pas toujours compréhensibles</li>
-						<li>Manque de fonctionnalités...</li>
 					</ul>
 				</section>
 			</section>
@@ -154,11 +159,25 @@ pick 2 Continue my branch1
 						</ul>
 					</aside>
 				</section>
+				<section>
+					<h2>Intéractif</h2>
+					<img class="plain strech" src="img/rebasei.svg" />
+					<aside class="notes">
+						<ul>
+							<li>pick</li>
+							<li>reword</li>
+							<li>squash</li>
+							<li>edit</li>
+							<li>drop</li>
+						</ul>
+					</aside>
+				</section>
 				<!--
 exec apt-get moo
 			-->
 				<section>
 					<h2>Journal de références</h2>
+					<pre><code>git reflog</code></pre>
 					<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
 0f8dde4 HEAD@{1}: rebase -i (squash): first + third
 606813c HEAD@{2}: rebase -i (start): checkout f07ec95
@@ -204,7 +223,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<section>
 				<section>
 					<h2>Customiser git</h2>
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+					<video id="configVid" onshow="vidplay(configVid)" class="stretch" loop autoplay="true">
 						<source src="video/config.mp4" type="video/mp4" />
 					</video>
 					<aside class="notes">
@@ -243,8 +262,8 @@ if [[ "$c" -eq 1 ]]; then
     git checkout $(git branch | grep "$1")
 else
     echo "'$1' is ambigus"
-	git branch | grep "$1"
-	exit 1
+    git branch | grep "$1"
+    exit 1
 fi</code></pre>
 					<aside class="notes">
 						<h2>Michel</h2>
@@ -407,7 +426,7 @@ sha1(
 			<section>
 				<section>
 					<h2>Gource</h2>
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+					<video id="gourceVid" onshow="vidplay('gourceVid')" class="stretch" loop autoplay="false">
 						<source src="video/gource.mp4" type="video/mp4" />
 					</video>
 				</section>
@@ -498,8 +517,8 @@ sha1(
 
 		hljs.initHighlightingOnLoad();
 
-		function vidplay() {
-			var video = document.getElementById("Video1");
+		function vidplay(vidId) {
+			var video = document.getElementById(vidId);
 			if (video.paused) {
 				video.play();
 			}
