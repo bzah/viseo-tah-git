@@ -28,8 +28,9 @@
 					<img class="plain" src="img/you_are_here.png" height="150">
 					<h3>Qu'est-ce qu'on fait ici ?</h3>
 					<ul>
-						<li>Technologie</li>
-						<li>Cas d'utilisation</li>
+						<li>Venez comme vous êtes !</li>
+						<li>Gardez ce qui vous plait</li>
+						<li>Partagez nous vos astuces</li>
 					</ul>
 					<aside class="notes">
 						<ol>
@@ -67,14 +68,14 @@
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-background="img/sourceTree.png" data-background-size="80%">
+				<section data-background="img/sourceTree.png" data-background-size="98%">
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">Kraken</h3>
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-background="img/kraken.png" data-background-size="80%">
+				<section data-background="img/kraken.png" data-background-size="98%">
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">Tig</h3>
@@ -184,7 +185,14 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section data-background="img/Capture-gitLab.png" data-background-size="98%">
 				</section>
-				<section data-background="img/Capture-gitLab2.png" data-background-size="98%">
+				<section>
+					<h2>What else ?</h2>
+					<ul>
+						<li>Stockage des source centralisé</li>
+						<li>Gestion des utilisateurs</li>
+						<li>Pull request</li>
+						<li>Fork</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Intégration continue</h2>
@@ -260,7 +268,7 @@ fi</code></pre>
 			<section>
 				<section>
 					<h2>Git, c'est magique!</h2>
-					<img src="img/unicorn.png" / width="40%">
+					<img src="img/unicorn.png" style="border: none; box-shadow: none" width="40%">
 				</section>
 				<section>
 					<h2>Avez vous déjà vu ...</h2>
@@ -271,7 +279,7 @@ fi</code></pre>
  Author: Michel michel.barret@viseo.com
  Date:   Wed Dec 6 12:40:14 2017 +0100
 
-	"Init presentation"
+"Init presentation"
 </code>
 </pre>
 					<aside class="notes">
@@ -282,43 +290,51 @@ fi</code></pre>
 				<section>
 					<h2>git hash</h2>
 					<h3>algorithme sha-1</h3>
-					<img src="img/git-hache.png" alt="hash" />
+					<img src="img/git-hache.png" style="border: none; box-shadow: none" alt="hash" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Hash d'un commit</h2>
+					<h2>"Hasher" un commit</h2>
 					<pre>
 						<code data-trim>
 sha1(
-  meta data
-      commit_message
-      commiter
-      commit_date
-      author
-      authoring_date
-  "Hash-Of-Entire-Working-Directory",
+  commit_message
+  commiter
+  commit_date
+  author
+  authoring_date
+  <span style="background-color: whitesmoke">Hash-Of-Entire-Working-Directory</span>
 )
 				</code>
 			</pre>
 				</section>
 				<section>
-					<h2>Hash-Of-Entire-Working-Directory</h2>
+					<h2>Hash-Of-Entire-Working-Directory ?</h2>
+					<video style="width:300px" id="Video-wtf" onshow="vidplay()" class="" loop autoplay="true">
+						<source src="video/wtf.mp4" type="video/mp4" />
+					</video>
 				</section>
 				<section>
+					<h3>Exemple : myProjet</h3>
+					<h4>Ce que
+						<span style="color: steelblue">nous</span> voyons</h4>
 					<pre><code>
-.
-│ main.java
-│
-├───.git
-└───resources
-│     logo.png
-└───components
-      ...
+ .
+ │ main.java
+ │
+ ├───.git
+ └───resources
+ │     logo.png
+ └───components
+       ...
 				</code></pre>
 				</section>
 				<section>
-					<img src="img/git-tree.png" alt="tree" />
+					<h3>Exemple : myProjet</h3>
+					<h4>Ce que
+						<span style="color: steelblue">git</span> voit</h4>
+					<img src="img/git-tree.png" alt="tree" style="border: none; box-shadow: none" />
 					<aside class="notes">
 						Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git. Ces blobs passent par le fonction
 						de hash et en résulte un identifiant unique. Les repertoires sont représentés par des arbres (tree). Ils servent de
@@ -326,7 +342,7 @@ sha1(
 					</aside>
 				</section>
 				<section>
-					<h2>hash de notre commit</h2>
+					<h2>Hashons notre commit</h2>
 					<pre>
 						<code>
 sha1(
@@ -339,7 +355,7 @@ Wed Dec 6 12:40:14 2017 +0100
 michel.barret@viseo.com
 Wed Dec 6 12:40:14 2017 +0100
 
-aa1b2fb696a831c89c53f787e03d863691d2b671
+<span style="background-color: whitesmoke">aa1b2fb696a831c89c53f787e03d863691d2b671</span>
 )
 				</code>
 			</pre>
@@ -370,12 +386,20 @@ sha1(
  author
  authoring_date
  Hash-Of-Entire-Working-Directory
- <span style="background-color: whitesmoke">"Parent commit hash" 89c53f787e1b2fb691...</span>
+
+ <span style="background-color: whitesmoke">Parent commit hash (89c53f787e1b2fb691...)</span>
+
 )
 					</code>
 				</pre>
 					<aside class="notes">
 						Enfin, l'intégrité même de l'historique est conservé grace au hash du commit parent présent dans ses commits enfants.
+					</aside>
+				</section>
+				<section>
+					<h2>On est tous le(a) fils(fille) de quelqu'un...</h2>
+					<img class="plain strech" src="img/flow-parent-history.svg" />
+					<aside class="notes">
 					</aside>
 				</section>
 			</section>
