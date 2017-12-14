@@ -55,11 +55,10 @@
 					</aside>
 				</section>
 				<section>
-					<h2>Objectifs</h2>
-					<!--video class="stretch" utoplay="true" controls="controls">
-						<source src="video/cake.mp4" type="video/mp4" />
-					</video-->
-					<aside class="notes"></aside>
+					<h2>Un petit rappel ?</h2>
+					<img class="plain strech" src="img/flow.svg" />
+					<aside class="notes">
+					</aside>
 				</section>
 			</section>
 
@@ -90,6 +89,7 @@
 					<aside class="notes">
 					</aside>
 				</section>
+				<section data-background="img/tig.png" data-background-size="80%"></section>
 				<section>
 					<h3>Avantages</h3>
 					<h4>Git pour les null(s)</h4>
@@ -106,7 +106,6 @@
 						<li>On ne sait pas ce qu'il y a sous le capot</li>
 						<li>Besoin d'un compte fabriquant</li>
 						<li>Erreurs pas toujours compréhensibles</li>
-						<li>Manque de fonctionnalités...</li>
 					</ul>
 				</section>
 			</section>
@@ -115,117 +114,70 @@
 			<section>
 				<section>
 					<h2>Commandes</h2>
-					<!-- https://giphy.com/gifs/nba-basketball-los-angeles-clippers-l3vR0bf9GKb3svmz6 -->
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
-						<source src="video/saveme.mp4" type="video/mp4" />
-					</video>
+					<img src="img/tech.gif" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code data-trim># git log</code></pre>
-					<pre><code data-trim>commit 0e40ba54b03f04c3786ea1e36542db248279797b
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:57:08 2017 +0200
-
-	Licence
-
-commit c0bd721d8ef471c09bd1f21013dc8eb9ab7f7928
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:54:12 2017 +0200
-
-	Licence
-
-commit 284c025e251d7220bb787744aee8fab933bb5743
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:48:04 2017 +0200
-
-	Use https
-
-commit c6b76cf77fdfb328c07ad1ee9f2657b045b52a47
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:46:54 2017 +0200
-
-	Import highlight
-
-commit 3d057a69c40ab97f2debb29b0c15557eb34e30e6
-Author: barmic <michel.barret@gmail.com>
-Date:   Fri Sep 1 11:44:51 2017 +0200
-
-	JS improve
-</code>
-</pre>
-				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code>git log  --color --graph --abbrev-commit --pretty=format:'%h - %d %s (%cr) <%an>'</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master) Licence (il y a 3 mois) &lt;barmic>
-* c0bd721 - Licence (il y a 3 mois) &lt;barmic>
-* 284c025 - Use https (il y a 3 mois) &lt;barmic>
-* c6b76cf - Import highlight (il y a 3 mois) &lt;barmic>
-* 3d057a6 - JS improve (il y a 3 mois) &lt;barmic>
-</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code># git lg  --stat</code></pre>
-					<pre><code data-trim>* 0e40ba5 - (HEAD -> master, origin/master, origin/HEAD) Licence (il y a 3 mois) <barmic>|
-|  index.html | 2 +-
-|  1 file changed, 1 insertion(+), 1 deletion(-)
-
-* c0bd721 - Licence (il y a 3 mois) <barmic>|
-|  index.html | 6 ++++++
-|  1 file changed, 6 insertions(+)
-</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Historique</h2>
+				<section data-transition="none">
+					<h2>Commits et branches</h2>
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code>1..HEAD</code></pre>
-					<img class="plain strech" src="img/flow1_HEAD.svg" />
+				<section data-transition="none">
+					<h2>Rebase</h2>
+					<pre><code>git rebase master</code></pre>
+					<img class="plain strech" src="img/rebase1.svg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section data-transition="none">
+					<h2>Rebase</h2>
+					<img class="plain strech" src="img/rebase2.svg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section data-transition="none">
+					<h2>Rebase</h2>
+					<img class="plain strech" src="img/rebase3.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Historique</h2>
-					<pre><code>HEAD..master</code></pre>
-					<img class="plain strech" src="img/flowHEAD_master.svg" />
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Historique</h2>
-					<pre><code>[alias]
-  out = log @{u}..
-  in  = log ..@{u}</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Rebase intéractif</h2>
-					<pre><code>pick   3d057a6 JS improve
-rework c6b76cf Import highlight
-edit   284c025 Use https
-squash c0bd721 Licence
-exec apt-get moo
-drop   0e40ba5 Licence
+					<h2>Intéractif</h2>
+					<pre><code>git rebase -i master</code></pre>
+					<pre><code>pick 1 Start my branch1
+pick 2 Continue my branch1
 </code></pre>
+					<aside class="notes">
+						<ul>
+							<li>pick</li>
+							<li>reword</li>
+							<li>squash</li>
+							<li>edit</li>
+							<li>drop</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
-					<h2>commit -p</h2>
+					<h2>Intéractif</h2>
+					<img class="plain strech" src="img/rebasei.svg" />
+					<aside class="notes">
+						<ul>
+							<li>pick</li>
+							<li>reword</li>
+							<li>squash</li>
+							<li>edit</li>
+							<li>drop</li>
+						</ul>
+					</aside>
 				</section>
+				<!--
+exec apt-get moo
+			-->
 				<section>
 					<h2>Journal de références</h2>
+					<pre><code>git reflog</code></pre>
 					<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
 0f8dde4 HEAD@{1}: rebase -i (squash): first + third
 606813c HEAD@{2}: rebase -i (start): checkout f07ec95
@@ -271,7 +223,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<section>
 				<section>
 					<h2>Customiser git</h2>
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+					<video id="configVid" onshow="vidplay(configVid)" class="stretch" loop autoplay="true">
 						<source src="video/config.mp4" type="video/mp4" />
 					</video>
 					<aside class="notes">
@@ -282,14 +234,9 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					<h2>Alias</h2>
 					<pre><code>[alias]
   st = status --short --branch
-  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -</code></pre>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
-				</section>
-				<section>
-					<h2>Plugin</h2>
-					<pre><code></code></pre>
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+  out = log @{u}..
+  in  = log ..@{u}</code></pre>
 					<aside class="notes">
 						<h2>Michel</h2>
 					</aside>
@@ -300,6 +247,35 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 						<li>pre-commit</li>
 						<li>prepare-commit-msg</li>
 						<li>post-commit</li>
+					</ul>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Mon premier plugin !</h2>
+					<pre><code>#!/bin/zsh
+							
+c=$(git branch | grep -c "$1")
+							
+if [[ "$c" -eq 1 ]]; then
+    git checkout $(git branch | grep "$1")
+else
+    echo "'$1' is ambigus"
+    git branch | grep "$1"
+    exit 1
+fi</code></pre>
+					<aside class="notes">
+						<h2>Michel</h2>
+					</aside>
+				</section>
+				<section>
+					<h2>Plugins</h2>
+					<ul>
+						<li>git-svn</li>
+						<li>octopussy</li>
+						<li>git-git</li>
+						<li><a href="https://github.com/unixorn/git-extra-commands#included-scripts"/>pleins d'autres</a></li>
 					</ul>
 					<aside class="notes">
 						<h2>Michel</h2>
@@ -450,7 +426,7 @@ sha1(
 			<section>
 				<section>
 					<h2>Gource</h2>
-					<video id="Video1" onshow="vidplay()" class="stretch" loop autoplay="true">
+					<video id="gourceVid" onshow="vidplay('gourceVid')" class="stretch" loop autoplay="false">
 						<source src="video/gource.mp4" type="video/mp4" />
 					</video>
 				</section>
@@ -541,8 +517,8 @@ sha1(
 
 		hljs.initHighlightingOnLoad();
 
-		function vidplay() {
-			var video = document.getElementById("Video1");
+		function vidplay(vidId) {
+			var video = document.getElementById(vidId);
 			if (video.paused) {
 				video.play();
 			}
