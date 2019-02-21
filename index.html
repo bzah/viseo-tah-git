@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>TupperGit</title>
+	<title>git Gud!</title>
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 	<link rel="stylesheet" href="css/custom.css">
@@ -17,41 +17,13 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<!-- Partie 1 - Intro -->
 			<section>
-				<section data-background-color="white" data-background="img/title.png" data-background-size="100%">
-					<aside class="notes">
-						<h2></h2>
-					</aside>
-				</section>
-				<section>
-					<img class="plain" src="img/you_are_here.png" height="150">
-					<h3>Qu'est-ce qu'on fait ici ?</h3>
-					<ul>
-						<li>Venez comme vous êtes !</li>
-						<li>Gardez ce qui vous plait</li>
-						<li>Partagez nous vos astuces</li>
-					</ul>
-					<aside class="notes">
-						<ol>
-							<li>
-								<em>Découvrir</em> une techno. Pas le temps d'approfondir.</li>
-							<li>
-								<em>Appliquer</em> sur un cas "réel". simplifié pour l'exemple.</li>
-							<li>
-								<em>Partager</em> l'expérience. Comment elle nous a servi? Ce qu'on en retient de bien, de moins bien</li>
-						</ol>
-					</aside>
-				</section>
-			</section>
-
-			<!-- Partie 2 - Présentation rapide de git & objectifs de la présentation -->
-			<section>
+				<!-- Intro -->
 				<section>
 					<h2>git</h2>
-					<!-- TODO logo git ou la bouille de Linus -->
 					<img src="img/git_logo.png" class="plain" width="300">
 					<aside class="notes">
+							Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development
 					</aside>
 				</section>
 				<section>
@@ -60,41 +32,37 @@
 					<aside class="notes">
 					</aside>
 				</section>
+				<section>
+					<h2>It's time to ...</h2>
+					<img class="plain" src="img/git-gud.gif">
+				</section>
 			</section>
 
-			<!-- Partie 3 - Clients -->
+			<!-- Clients -->
 			<section>
 				<section>
 					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
-					<aside class="notes">
-					</aside>
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">SourceTree</h3>
-					<aside class="notes">
-					</aside>
 				</section>
 				<section data-background="img/sourceTree.png" data-background-size="98%">
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">Kraken</h3>
-					<aside class="notes">
-					</aside>
 				</section>
 				<section data-background="img/kraken.png" data-background-size="98%">
 				</section>
 				<section>
 					<h3 style="color: #5d5d5d;">Tig</h3>
-					<h4 style="color: #5d5d5d;">ncurses-based text-mode interface</h4>
-					<aside class="notes">
-					</aside>
+					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
 				</section>
 				<section data-background="img/tig.png" data-background-size="80%">
 					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
 				</section>
 				<section>
 					<h3>Avantages</h3>
-					<h4>Git pour les null(s)</h4>
+					<h4>Git pour les null</h4>
 					<ul>
 						<li>Facile à prendre en main</li>
 						<li>Pas de commandes à apprendre</li>
@@ -112,13 +80,12 @@
 				</section>
 			</section>
 
-			<!-- Partie 4 - Commandes pour aller plus loin -->
+			<!-- Gitflow ? -->
+
+			<!-- Commandes pour aller plus loin -->
 			<section>
 				<section>
-					<h2>Commandes</h2>
-					<img src="img/tech.gif" />
-					<aside class="notes">
-					</aside>
+					<h2>Les commandes pour aller plus loin </h2>
 				</section>
 				<section data-transition="none">
 					<h2>Commits et branches</h2>
@@ -295,18 +262,19 @@ fi</code></pre>
 				</section>
 				<section>
 					<h2>Avez vous déjà vu ...</h2>
-					<p>Un commit</p>
+					<p>Un commit de Michel</p>
 					<pre>
 						<code data-trim>
  commit 8684d0560cb7c51234cbefebd83409e90cb7e29f
- Author: Michel michel.barret@viseo.com
+ Author: Michel michel.xxxx@viseo.com
  Date:   Wed Dec 6 12:40:14 2017 +0100
 
 "Init presentation"
 </code>
 </pre>
 					<aside class="notes">
-						Vous avez sans doute déja vu un commit. Vous vous etes déja demandé pourquoi les numéros de commit sont aussi long ? Et puis,
+						Vous avez sans doute déja vu un commit. Vous vous etes déja demandé pourquoi les numéros de commit sont aussi
+						long ? Et puis,
 						pouquoi est ce que deux commit consécutifs n'ont pas un simple incrément dans leurs numéros ?
 					</aside>
 				</section>
@@ -322,12 +290,12 @@ fi</code></pre>
 					<pre>
 						<code data-trim>
 sha1(
-  commit_message
-  commiter
-  commit_date
-  author
-  authoring_date
-  <span style="background-color: whitesmoke">Hash-Of-Entire-Working-Directory</span>
+  commit_message,
+  commiter,
+  commit_date,
+  author,
+  authoring_date,
+  <span style="background-color: rgb(252, 252, 252)">Hash-Of-Entire-Working-Directory</span>
 )
 				</code>
 			</pre>
@@ -359,8 +327,10 @@ sha1(
 						<span style="color: steelblue">git</span> voit</h4>
 					<img src="img/git-tree.png" alt="tree" style="border: none; box-shadow: none" />
 					<aside class="notes">
-						Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git. Ces blobs passent par le fonction
-						de hash et en résulte un identifiant unique. Les repertoires sont représentés par des arbres (tree). Ils servent de
+						Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git. Ces blobs passent par le
+						fonction
+						de hash et en résulte un identifiant unique. Les repertoires sont représentés par des arbres (tree). Ils servent
+						de
 						dictionnaire entre les noms des fichiers contenus dans un repertoire et leurs hashs respectifs.
 					</aside>
 				</section>
@@ -372,10 +342,10 @@ sha1(
 
 "Init presentation"
 
-michel.barret@viseo.com
+michel.xxxx@viseo.com
 Wed Dec 6 12:40:14 2017 +0100
 
-michel.barret@viseo.com
+michel.xxxx@viseo.com
 Wed Dec 6 12:40:14 2017 +0100
 
 <span style="background-color: whitesmoke">aa1b2fb696a831c89c53f787e03d863691d2b671</span>
@@ -392,8 +362,10 @@ Wed Dec 6 12:40:14 2017 +0100
 					</h2>
 					<h3></h3>
 					<aside class="notes">
-						Tous ces hashage permettent de garantir l'intégrité des fichiers sur toutes les machines qui possèdent un même repository.
-						De plus, cela permet à git de détecter le moindre changement et de l'indiquer à l'utilisateur. Enfin, l'intégrité même
+						Tous ces hashage permettent de garantir l'intégrité des fichiers sur toutes les machines qui possèdent un même
+						repository.
+						De plus, cela permet à git de détecter le moindre changement et de l'indiquer à l'utilisateur. Enfin, l'intégrité
+						même
 						de l'historique est conservé grace au hash du commit parent présent de son ou ses commits enfants.
 					</aside>
 				</section>
@@ -416,7 +388,8 @@ sha1(
 					</code>
 				</pre>
 					<aside class="notes">
-						Enfin, l'intégrité même de l'historique est conservé grace au hash du commit parent présent dans ses commits enfants.
+						Enfin, l'intégrité même de l'historique est conservé grace au hash du commit parent présent dans ses commits
+						enfants.
 					</aside>
 				</section>
 				<section>
@@ -437,22 +410,6 @@ sha1(
 			</section>
 
 			<!-- Part 9 Ciao ! -->
-			<section>
-				<section>
-					<h2>Joyeux Noël !</h2>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<section>
-					<h2>Au prochain épisode...</h2>
-					<img class="plain stretch" src="img/flyer_securite_head.png">
-					<aside class="notes">
-						<h2>Pierre</h2>
-						TODO
-					</aside>
-				</section>
-			</section>
 
 			<section>
 				<h2>Licence</h2>
@@ -461,10 +418,12 @@ sha1(
 					<img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
 				</a>
 				<br />
-				<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir les subtilités de Cassandra</span> de
+				<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir
+					les subtilités de Cassandra</span> de
 				<a xmlns:cc="http://creativecommons.org/ns#" href="https://barmic.github.io/viseo-take-an-hour_cassandra" property="cc:attributionName"
-				 rel="cc:attributionURL">Viseo - Abel Aoun & Michel Barret</a> est mis à disposition selon les termes de la
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International</a>.
+				 rel="cc:attributionURL">Viseo - Abel Aoun & Michel xxxx</a> est mis à disposition selon les termes de la
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas
+					d’Utilisation Commerciale 4.0 International</a>.
 				<br />Fondé(e) sur une œuvre à
 				<a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/barmic/viseo-take-an-hour_cassandra.git" rel="dct:source">https://github.com/barmic/viseo-take-an-hour_cassandra.git</a>.
 			</section>
