@@ -23,11 +23,26 @@
 					<h2>git</h2>
 					<img src="img/git_logo.png" class="plain" width="300">
 					<aside class="notes">
-							Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development
+						Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers
+						contributing to its initial development.
+						(Wikipedia)
 					</aside>
 				</section>
 				<section>
-					<h2>Un petit rappel ?</h2>
+					<h2>Plan</h2>
+					<ul>
+						<li>La ligne de commande</li>
+						<li>Les clients Git</li>
+						<li>Il y a quoi sous le capot ? (.git/)</li>
+						<li>Pimp My Git!</li>
+						<li>Quelques scénarios</li>
+						<li>Les outils autour de git</li>
+						<li>REX et bonnes pratiques</li>
+						<li>Dissection d'un commit (si on a le temps)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Notre base</h2>
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
@@ -38,54 +53,11 @@
 				</section>
 			</section>
 
-			<!-- Clients -->
+			<!-- Git en ligne de commande -->
+			<!-- TODO : Ajouter les commandes et les graphs de google drive  -->
 			<section>
 				<section>
-					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">SourceTree</h3>
-				</section>
-				<section data-background="img/sourceTree.png" data-background-size="98%">
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">Kraken</h3>
-				</section>
-				<section data-background="img/kraken.png" data-background-size="98%">
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">Tig</h3>
-					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
-				</section>
-				<section data-background="img/tig.png" data-background-size="80%">
-					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
-				</section>
-				<section>
-					<h3>Avantages</h3>
-					<h4>Git pour les null</h4>
-					<ul>
-						<li>Facile à prendre en main</li>
-						<li>Pas de commandes à apprendre</li>
-						<li>Représentation visuel de l'arbre de branches Git</li>
-						<li>C'est quand même pas moche...</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Inconvénients</h3>
-					<ul>
-						<li>On ne sait pas ce qu'il y a sous le capot</li>
-						<li>Besoin d'un compte fabriquant</li>
-						<li>Erreurs pas toujours compréhensibles</li>
-					</ul>
-				</section>
-			</section>
-
-			<!-- Gitflow ? -->
-
-			<!-- Commandes pour aller plus loin -->
-			<section>
-				<section>
-					<h2>Les commandes pour aller plus loin </h2>
+					<h2>Git en ligne de commande</h2>
 				</section>
 				<section data-transition="none">
 					<h2>Commits et branches</h2>
@@ -141,9 +113,6 @@ pick 2 Continue my branch1
 						</ul>
 					</aside>
 				</section>
-				<!--
-exec apt-get moo
-			-->
 				<section>
 					<h2>Journal de références</h2>
 					<pre><code>git reflog</code></pre>
@@ -157,7 +126,196 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 			</section>
 
-			<!-- Part 5 outils autour de git -->
+			<!-- Il y a quoi sous le capot ? -->
+			<section>
+				<section>
+					<h2>Il y a quoi sous le capot ?</h2>
+				</section>
+				<section data-transition="none">
+					<h2>.git/</h2>
+					<aside class="notes">
+						Montrer un repo tout juste initialisé.
+						Comparer avec un repo existant avec un historique.
+
+						.git/ (On touche avec les yeux !)
+						Tout ce dont git a besoin pour gérer in Configuration local au repository
+
+						hooks/
+						- Les hooks permettent d'augmenter git et lui rajoutant des fonctions déclenchées
+						par des évenements (commit, push ...).
+						- Montrer un des exemples de hooks/truc.sample
+
+						info/
+						- Dossier peu intéressant. Il contient permettant de faire des exclusions locales.
+
+						logs/
+						- historique de tous ce qu'il se passe sur le répo
+						- Utiliser la commande reflog
+
+						objects/
+						- La "base de données" de git
+						- Fragile ! NE PAS TOUCHER !
+						- Est utiliser par le garbage collector de git
+
+						refs/
+						- Références nommées du repo git
+						- stash, branches locales, branches remotes, tags
+						- Faire un cat sur un des fichiers et y voir l'Id du commit
+
+						config
+
+						description
+
+						HEAD
+
+						index (Gère la zone de staging)
+
+						packed-refs (Références dormantes de refs utilisé par le garbage collector)
+					</aside>
+				</section>
+			</section>
+
+			<!-- Les clients graphiques pour Git -->
+			<section>
+				<section>
+					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">SourceTree</h3>
+				</section>
+				<section data-background="img/sourceTree.png" data-background-size="98%">
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">Kraken</h3>
+				</section>
+				<section data-background="img/kraken.png" data-background-size="98%">
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">Tig</h3>
+					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
+				</section>
+				<section data-background="img/tig.png" data-background-size="80%">
+					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">IntelliJ</h3>
+					<h4 style="color: #5d5d5d;">Faire des beaux commits atomiques ! (Démo)</h4>
+					<p>git add --patch (ou -p)</p>
+					<aside class="notes">
+						Montrer les "git commit --patch"
+					</aside>
+				</section>
+				<section>
+					<h3>Avantages</h3>
+					<h4>Git pour les null</h4>
+					<ul>
+						<li>Facile à prendre en main</li>
+						<li>Pas de commandes à apprendre</li>
+						<li>Représentation visuel de l'arbre de branches Git</li>
+						<li>C'est quand même pas moche...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Inconvénients</h3>
+					<ul>
+						<li>On ne sait pas ce qu'il y a sous le capot</li>
+						<li>Besoin d'un compte fabriquant</li>
+						<li>Erreurs pas toujours compréhensibles</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Pimp My Git! -->
+			<section>
+				<section>
+					<h2>Pimp My Git!</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Aliases</h2>
+					<pre><code>[alias]
+	  co = checkout							
+	  st = status --short --branch
+	  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+	  out = log @{u}..
+	  in  = log ..@{u}</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Hook</h2>
+					<ul>
+						<li>pre-commit</li>
+						<li>prepare-commit-msg</li>
+						<li>post-checkout</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Mon premier plugin !</h2>
+					<pre><code>#!/bin/zsh
+								
+	c=$(git branch | grep -c "$1")
+								
+	if [[ "$c" -eq 1 ]]; then
+		git checkout $(git branch | grep "$1")
+	else
+		echo "'$1' is ambigus"
+		git branch | grep "$1"
+		exit 1
+	fi</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Plugins</h2>
+					<ul>
+						<li>git-svn</li>
+						<li>octopussy</li>
+						<li>git-git</li>
+						<li>
+							<a href="https://github.com/unixorn/git-extra-commands#included-scripts" />pleins d'autres</a>
+						</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+			<!-- Quelques scénarios -->
+			<!-- TODO : remplir les scénarios -->
+			<section>
+				<section>
+					<h2>Quelques scénarios</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					/!\ TODO /!\
+
+					Scénario non géré par git avec du code mort qui a été supprimé dans une branche et est utilisé dans une autre,
+					comment git gère-t-il le merge ? (ex de moi qui supprime systématiquement le code mort)
+
+					Scénario de merge avec des conflits, pourquoi les modifs qui ne sont pas conflits sont à tratiter manuellement
+					dans un fichier en conflit.
+
+					In case of fire git commit -am "" & git push
+
+					Déplacer un fichier ET modifier son contenu => git considérera que le fichier original a été supprimé et qu'un
+					nouveau a été créé. Solution : faire deux commits distincts (à noter que ce n'est pas le cas si on ne fait que
+					renommer le fichier et pas le déplacer)
+
+					CRLF, LF, CR
+
+					Rebase over rebase la gestion des conflits identiques encore et encore... (revoir comment reproduire ça)
+
+				</section>
+				<section></section>
+			</section>
+
+			<!-- Les outils autour de git -->
 			<section>
 				<section>
 					<h2>Les outils autour de git</h2>
@@ -188,76 +346,25 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 			</section>
 
-			<!-- Part 6 Créer son plugin -->
+			<!-- REX et bonnes pratiques -->
+			<!-- TODO : remplir bonnes pratiques -->
 			<section>
 				<section>
-					<h2>Customiser git</h2>
-					<video id="configVid" onshow="vidplay(configVid)" class="stretch" loop autoplay="true">
-						<source src="video/config.mp4" type="video/mp4" />
-					</video>
+					<h2>REX et bonnes pratiques</h2>
 					<aside class="notes">
-						<h2>Michel</h2>
 					</aside>
 				</section>
 				<section>
-					<h2>Alias</h2>
-					<pre><code>[alias]
-  st = status --short --branch
-  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
-  out = log @{u}..
-  in  = log ..@{u}</code></pre>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
+					<h2>Quelques scénarios</h2>
 				</section>
-				<section>
-					<h2>Hook</h2>
-					<ul>
-						<li>pre-commit</li>
-						<li>prepare-commit-msg</li>
-						<li>post-checkout</li>
-					</ul>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
-				</section>
-				<section>
-					<h2>Mon premier plugin !</h2>
-					<pre><code>#!/bin/zsh
-							
-c=$(git branch | grep -c "$1")
-							
-if [[ "$c" -eq 1 ]]; then
-    git checkout $(git branch | grep "$1")
-else
-    echo "'$1' is ambigus"
-    git branch | grep "$1"
-    exit 1
-fi</code></pre>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
-				</section>
-				<section>
-					<h2>Plugins</h2>
-					<ul>
-						<li>git-svn</li>
-						<li>octopussy</li>
-						<li>git-git</li>
-						<li>
-							<a href="https://github.com/unixorn/git-extra-commands#included-scripts" />pleins d'autres</a>
-						</li>
-					</ul>
-					<aside class="notes">
-						<h2>Michel</h2>
-					</aside>
-				</section>
+				<section></section>
 			</section>
 
-			<!-- Part 7 Théorie -->
+			<!-- Dissection d'un commit -->
 			<section>
 				<section>
-					<h2>Git, c'est magique!</h2>
+					<h2>Dissection d'un commit</h2>
+					<h4>Git, c'est magique!</h4>
 					<img src="img/unicorn.png" style="border: none; box-shadow: none" width="40%">
 				</section>
 				<section>
@@ -273,9 +380,9 @@ fi</code></pre>
 </code>
 </pre>
 					<aside class="notes">
-						Vous avez sans doute déja vu un commit. Vous vous etes déja demandé pourquoi les numéros de commit sont aussi
-						long ? Et puis,
-						pouquoi est ce que deux commit consécutifs n'ont pas un simple incrément dans leurs numéros ?
+						Vous avez sans doute déjà vu un commit.
+						Vous vous etes déja demandé pourquoi les "numéros" de commit sont aussi long ?
+						Et puis, pouquoi est ce que deux commit consécutifs n'ont pas un simple incrément dans leurs numéros ?
 					</aside>
 				</section>
 				<section>
@@ -302,9 +409,7 @@ sha1(
 				</section>
 				<section>
 					<h2>Hash-Of-Entire-Working-Directory ?</h2>
-					<video style="width:300px" id="Video-wtf" onshow="vidplay()" class="" loop autoplay="true">
-						<source src="video/wtf.mp4" type="video/mp4" />
-					</video>
+					<img src="IMG/wtf.gif" />
 				</section>
 				<section>
 					<h3>Exemple : myProjet</h3>
@@ -327,11 +432,10 @@ sha1(
 						<span style="color: steelblue">git</span> voit</h4>
 					<img src="img/git-tree.png" alt="tree" style="border: none; box-shadow: none" />
 					<aside class="notes">
-						Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git. Ces blobs passent par le
-						fonction
-						de hash et en résulte un identifiant unique. Les repertoires sont représentés par des arbres (tree). Ils servent
-						de
-						dictionnaire entre les noms des fichiers contenus dans un repertoire et leurs hashs respectifs.
+						Si on part du bas. Les fichiers comme logo.png sont représentés par des blobs dans git.
+						Ces blobs passent par la fonction de hash et en résulte un identifiant unique.
+						Les repertoires sont représentés par des arbres (tree).
+						Ils servent de dictionnaire entre les noms des fichiers contenus dans un repertoire et leurs hashs respectifs.
 					</aside>
 				</section>
 				<section>
@@ -364,7 +468,8 @@ Wed Dec 6 12:40:14 2017 +0100
 					<aside class="notes">
 						Tous ces hashage permettent de garantir l'intégrité des fichiers sur toutes les machines qui possèdent un même
 						repository.
-						De plus, cela permet à git de détecter le moindre changement et de l'indiquer à l'utilisateur. Enfin, l'intégrité
+						De plus, cela permet à git de détecter le moindre changement et de l'indiquer à l'utilisateur. Enfin,
+						l'intégrité
 						même
 						de l'historique est conservé grace au hash du commit parent présent de son ou ses commits enfants.
 					</aside>
@@ -381,9 +486,7 @@ sha1(
  author
  authoring_date
  Hash-Of-Entire-Working-Directory
-
- <span style="background-color: whitesmoke">Parent commit hash (89c53f787e1b2fb691...)</span>
-
+ <span style="background-color: whitesmoke">hash-of-parent-commit</span>
 )
 					</code>
 				</pre>
@@ -399,33 +502,34 @@ sha1(
 					</aside>
 				</section>
 			</section>
-			<!-- Part 8 Gource -->
+
+			<!-- Pour approfondir le sujet -->
+			<!-- TODO : remplir -->
 			<section>
-				<section>
-					<h2>Gource</h2>
-					<video id="gourceVid" onshow="vidplay('gourceVid')" class="stretch" loop autoplay="false">
-						<source src="video/gource.mp4" type="video/mp4" />
-					</video>
-				</section>
+
 			</section>
 
-			<!-- Part 9 Ciao ! -->
+			<!-- Gource -->
 
+			<!-- Ciao ! -->
+			<!-- TODO : remplir -->
 			<section>
 				<h2>Licence</h2>
 				Pour ce qui concerne tous les contenus que nous avons produits dans cette présentation :
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
 					<img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
 				</a>
-				<br />
-				<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Découvrir
-					les subtilités de Cassandra</span> de
-				<a xmlns:cc="http://creativecommons.org/ns#" href="https://barmic.github.io/viseo-take-an-hour_cassandra" property="cc:attributionName"
-				 rel="cc:attributionURL">Viseo - Abel Aoun & Michel xxxx</a> est mis à disposition selon les termes de la
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence Creative Commons Attribution - Pas
-					d’Utilisation Commerciale 4.0 International</a>.
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International
+				</a>.
 				<br />Fondé(e) sur une œuvre à
 				<a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/barmic/viseo-take-an-hour_cassandra.git" rel="dct:source">https://github.com/barmic/viseo-take-an-hour_cassandra.git</a>.
+			</section>
+
+			<!-- Ressources -->
+			<!-- TODO : remplir -->
+			<section>
+
 			</section>
 		</div>
 	</div>
