@@ -59,33 +59,33 @@
 				<section>
 					<h2>Git en ligne de commande</h2>
 				</section>
-				<section data-transition="none">
-					<h2>Commits et branches</h2>
+				<section>
+					<h2>Notre base</h2>
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-transition="none">
+				<section>
 					<h2>Rebase</h2>
 					<pre><code>git rebase master</code></pre>
 					<img class="plain strech" src="img/rebase1.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-transition="none">
+				<section>
 					<h2>Rebase</h2>
 					<img class="plain strech" src="img/rebase2.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
-				<section data-transition="none">
+				<section>
 					<h2>Rebase</h2>
 					<img class="plain strech" src="img/rebase3.svg" />
 					<aside class="notes">
 					</aside>
 				</section>
 				<section>
-					<h2>Intéractif</h2>
+					<h2>Rebase Intéractif</h2>
 					<pre><code>git rebase -i master</code></pre>
 					<pre><code>pick 1 Start my branch1
 pick 2 Continue my branch1
@@ -101,7 +101,7 @@ pick 2 Continue my branch1
 					</aside>
 				</section>
 				<section>
-					<h2>Intéractif</h2>
+					<h2>Rebase Intéractif</h2>
 					<img class="plain strech" src="img/rebasei.svg" />
 					<aside class="notes">
 						<ul>
@@ -114,7 +114,7 @@ pick 2 Continue my branch1
 					</aside>
 				</section>
 				<section>
-					<h2>Journal de références</h2>
+					<h2>Journal de références (Reflog)</h2>
 					<pre><code>git reflog</code></pre>
 					<pre><code>0f8dde4 HEAD@{0}: rebase -i (finish): returning to refs/heads/master
 0f8dde4 HEAD@{1}: rebase -i (squash): first + third
@@ -124,6 +124,7 @@ e3025b3 HEAD@{4}: commit: second
 606813c HEAD@{5}: commit: first
 f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
+
 			</section>
 
 			<!-- Il y a quoi sous le capot ? -->
@@ -131,7 +132,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				<section>
 					<h2>Il y a quoi sous le capot ?</h2>
 				</section>
-				<section data-transition="none">
+				<section>
 					<h2>.git/</h2>
 					<aside class="notes">
 						Montrer un repo tout juste initialisé.
@@ -293,26 +294,88 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					</aside>
 				</section>
 				<section>
+					<h2>Notre base</h2>
+					<img class="plain strech" src="img/git-state-1.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Et on bouge la tête ...</h2>
+					<pre><code>git checkout master</code></pre>
+					<img class="plain strech" src="img/git-state-2_checkout_master.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Tag</h2>
+					<pre><code>git tag "Add-great-lib" 1</code></pre>
+					<img class="plain strech" src="img/git-state-3_tag.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>git à la cerise</h2>
+					<pre><code>git cherry-pick Add-great-lib</code></pre>
+					<img class="plain strech" src="img/git-state-4_cherry-pick.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Tel Louis XVI...</h2>
+					<pre><code>git checkout --detach C</code></pre>
+					<img class="plain strech" src="img/git-state-5_checkout-detached-HEAD.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Une autre cerise</h2>
+					<pre><code>git cherry-pick Add-great-lib</code></pre>
+					<img class="plain strech" src="img/git-state-6_cherry-pick_2.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Back to master</h2>
+					<pre><code>git checkout master</code></pre>
+					<img class="plain strech" src="img/git-state-7_true_checkout_master.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Enfaite non, pas si bien cette lib...</h2>
+					<pre><code>git reset --hard HEAD~1</code></pre>
+					<img class="plain strech" src="img/git-state-8_reset_HEAD~1.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Au et puis si, je vais la remettre</h2>
+					<pre><code>git reflog</code></pre>
+					<pre><code>git reset xxx</code></pre>
+					<img class="plain strech" src="img/git-state-9_reflog___reset.jpg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
 					/!\ TODO /!\
 
 					Scénario non géré par git avec du code mort qui a été supprimé dans une branche et est utilisé dans une autre,
 					comment git gère-t-il le merge ? (ex de moi qui supprime systématiquement le code mort)
-
+					********************************************
 					Scénario de merge avec des conflits, pourquoi les modifs qui ne sont pas conflits sont à tratiter manuellement
 					dans un fichier en conflit.
-
+					********************************************
 					In case of fire git commit -am "" & git push
-
+					********************************************
 					Déplacer un fichier ET modifier son contenu => git considérera que le fichier original a été supprimé et qu'un
 					nouveau a été créé. Solution : faire deux commits distincts (à noter que ce n'est pas le cas si on ne fait que
 					renommer le fichier et pas le déplacer)
-
+					********************************************
 					CRLF, LF, CR
-
+					********************************************
 					Rebase over rebase la gestion des conflits identiques encore et encore... (revoir comment reproduire ça)
-
+					********************************************
 				</section>
-				<section></section>
 			</section>
 
 			<!-- Les outils autour de git -->
@@ -355,9 +418,35 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					</aside>
 				</section>
 				<section>
-					<h2>Quelques scénarios</h2>
+					Bonnes pratiques sur la construction du message de commit et de la façon de commiter
+					- Quel est la taille d'un commit (combien de fichiers, combien de ligne (voir –p))
+					- Comment rédiger le messages (This commit will...msg), avec combien de charactère par ligne et pourquoi cette
+					rigueur
+					- Pourquoi écrire en français peut poser problème (UTF-8)
+					- Pourquoi sauter une ligne entre le titre et le texte...
+					- Ne pas commencer le message pas un '#' ! (ni le nom d'une ref d'ailleurs)
 				</section>
-				<section></section>
+				<section>
+					Inclure git dans le processus de développement
+					- Tech-Lead review
+					- Résolution de conflits par le tech-lead
+					- Commit message comme changelog
+				</section>
+				<section>
+					Comment être prévoyant pour la gestion de conflits
+					- Le meilleur moyen de résoudre les conflits, c'est de ne pas en avoir :
+					- Retarder les refactoring structurel sur du code modifié par d'autres
+					(avoir une approche feature first pour les merges, cad celui qui fait le refactoring structurel,
+					se DOIT de faire la résolution des conflits)
+					- L'importance des conventions de codage pour éviter les conflits
+					(voir comment git gère les conflits entre \t, \s \n...)
+				</section>
+				<section>
+					Gitflow
+					- a adapter selon la taille de l'équipe
+					- Créer des noms de branches explicites
+					- Avoir un outil qui ne fait pas l'auto-completion des noms de branches n'est pas une excuse
+				</section>
 			</section>
 
 			<!-- Dissection d'un commit -->
@@ -508,8 +597,6 @@ sha1(
 			<section>
 
 			</section>
-
-			<!-- Gource -->
 
 			<!-- Ciao ! -->
 			<!-- TODO : remplir -->
