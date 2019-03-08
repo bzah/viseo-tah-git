@@ -133,7 +133,8 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					<h2>Il y a quoi sous le capot ?</h2>
 				</section>
 				<section>
-					<h2>.git/</h2>
+					<h2>Plongeons dans</h2>
+					<h2><strong>.git/</strong></h2>
 					<aside class="notes">
 						Montrer un repo tout juste initialisé.
 						Comparer avec un repo existant avec un historique.
@@ -616,12 +617,23 @@ sha1(
 			<!-- Ressources -->
 			<!-- TODO : remplir -->
 			<section>
-
+				<!-- todo rajouter pretty tree dans les alias ?-->
+				pretty-tree : https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+				lib js pour créer des schéma typique de git : http://gitgraphjs.com/
+				gource : https://gource.io/
 			</section>
 		</div>
 	</div>
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
+	<script>
+		var link = document.createElement('link')
+		link.rel = 'stylesheet'
+		link.type = 'text/css'
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css'
+		document.getElementsByTagName('head')[0].appendChild(link)
+		Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+	</script>
 
 	<script>
 		// Required, even if empty.
