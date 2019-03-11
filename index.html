@@ -124,171 +124,6 @@ e3025b3 HEAD@{4}: commit: second
 606813c HEAD@{5}: commit: first
 f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
-
-			</section>
-
-			<!-- Il y a quoi sous le capot ? -->
-			<section>
-				<section>
-					<h2>Il y a quoi sous le capot ?</h2>
-				</section>
-				<section>
-					<h2>Plongeons dans</h2>
-					<h2><strong>.git/</strong></h2>
-					<aside class="notes">
-						Montrer un repo tout juste initialisé.
-						Comparer avec un repo existant avec un historique.
-
-						.git/ (On touche avec les yeux !)
-						Tout ce dont git a besoin pour gérer in Configuration local au repository
-
-						hooks/
-						- Les hooks permettent d'augmenter git et lui rajoutant des fonctions déclenchées
-						par des évenements (commit, push ...).
-						- Montrer un des exemples de hooks/truc.sample
-
-						info/
-						- Dossier peu intéressant. Il contient permettant de faire des exclusions locales.
-
-						logs/
-						- historique de tous ce qu'il se passe sur le répo
-						- Utiliser la commande reflog
-
-						objects/
-						- La "base de données" de git
-						- Fragile ! NE PAS TOUCHER !
-						- Est utiliser par le garbage collector de git
-
-						refs/
-						- Références nommées du repo git
-						- stash, branches locales, branches remotes, tags
-						- Faire un cat sur un des fichiers et y voir l'Id du commit
-
-						config
-
-						description
-
-						HEAD
-
-						index (Gère la zone de staging)
-
-						packed-refs (Références dormantes de refs utilisé par le garbage collector)
-					</aside>
-				</section>
-			</section>
-
-			<!-- Les clients graphiques pour Git -->
-			<section>
-				<section>
-					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">SourceTree</h3>
-				</section>
-				<section data-background="img/sourceTree.png" data-background-size="98%">
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">Kraken</h3>
-				</section>
-				<section data-background="img/kraken.png" data-background-size="98%">
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">Tig</h3>
-					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
-				</section>
-				<section data-background="img/tig.png" data-background-size="80%">
-					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
-				</section>
-				<section>
-					<h3 style="color: #5d5d5d;">IntelliJ</h3>
-					<h4 style="color: #5d5d5d;">Faire des beaux commits atomiques ! (Démo)</h4>
-					<p>git add --patch (ou -p)</p>
-					<aside class="notes">
-						Montrer les "git commit --patch"
-					</aside>
-				</section>
-				<section>
-					<h3>Avantages</h3>
-					<h4>Git pour les null</h4>
-					<ul>
-						<li>Facile à prendre en main</li>
-						<li>Pas de commandes à apprendre</li>
-						<li>Représentation visuel de l'arbre de branches Git</li>
-						<li>C'est quand même pas moche...</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Inconvénients</h3>
-					<ul>
-						<li>On ne sait pas ce qu'il y a sous le capot</li>
-						<li>Besoin d'un compte fabriquant</li>
-						<li>Erreurs pas toujours compréhensibles</li>
-					</ul>
-				</section>
-			</section>
-
-			<!-- Pimp My Git! -->
-			<section>
-				<section>
-					<h2>Pimp My Git!</h2>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Aliases</h2>
-					<pre><code>[alias]
-	  co = checkout							
-	  st = status --short --branch
-	  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
-	  out = log @{u}..
-	  in  = log ..@{u}</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Hook</h2>
-					<ul>
-						<li>pre-commit</li>
-						<li>prepare-commit-msg</li>
-						<li>post-checkout</li>
-					</ul>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Mon premier plugin !</h2>
-					<pre><code>#!/bin/zsh
-								
-	c=$(git branch | grep -c "$1")
-								
-	if [[ "$c" -eq 1 ]]; then
-		git checkout $(git branch | grep "$1")
-	else
-		echo "'$1' is ambigus"
-		git branch | grep "$1"
-		exit 1
-	fi</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Plugins</h2>
-					<ul>
-						<li>git-svn</li>
-						<li>octopussy</li>
-						<li>git-git</li>
-						<li>
-							<a href="https://github.com/unixorn/git-extra-commands#included-scripts" />pleins d'autres</a>
-						</li>
-					</ul>
-					<aside class="notes">
-					</aside>
-				</section>
-			</section>
-
-			<!-- Quelques scénarios -->
-			<!-- TODO : remplir les scénarios -->
-			<section>
 				<section>
 					<h2>Quelques scénarios</h2>
 					<aside class="notes">
@@ -357,25 +192,189 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 					<aside class="notes">
 					</aside>
 				</section>
+			</section>
+
+			<!-- Les clients graphiques pour Git -->
+			<section>
+				<section>
+					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">SourceTree</h3>
+				</section>
+				<section data-background="img/sourceTree.png" data-background-size="98%">
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">Kraken</h3>
+				</section>
+				<section data-background="img/kraken.png" data-background-size="98%">
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">Tig</h3>
+					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
+				</section>
+				<section data-background="img/tig.png" data-background-size="80%">
+					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
+				</section>
+				<section>
+					<h3 style="color: #5d5d5d;">IntelliJ</h3>
+					<h4 style="color: #5d5d5d;">Faire des beaux commits atomiques ! (Démo)</h4>
+					<p>git add --patch (ou -p)</p>
+					<aside class="notes">
+						Montrer les "git commit --patch"
+					</aside>
+				</section>
+				<section>
+					<h3>Avantages</h3>
+					<h4>Git pour les null</h4>
+					<ul>
+						<li>Facile à prendre en main</li>
+						<li>Pas de commandes à apprendre</li>
+						<li>Représentation visuel de l'arbre de branches Git</li>
+						<li>C'est quand même pas moche...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Inconvénients</h3>
+					<ul>
+						<li>On ne sait pas ce qu'il y a sous le capot</li>
+						<li>Besoin d'un compte fabriquant</li>
+						<li>Erreurs pas toujours compréhensibles</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Il y a quoi sous le capot ? -->
+			<section>
+				<section>
+					<h2>Il y a quoi sous le capot ?</h2>
+				</section>
+				<section>
+					<h2>Plongeons dans</h2>
+					<h2><strong>.git/</strong></h2>
+					<aside class="notes">
+						Montrer un repo tout juste initialisé.
+						Comparer avec un repo existant avec un historique.
+
+						.git/ (On touche avec les yeux !)
+						Tout ce dont git a besoin pour gérer in Configuration local au repository
+
+						hooks/
+						- Les hooks permettent d'augmenter git et lui rajoutant des fonctions déclenchées
+						par des évenements (commit, push ...).
+						- Montrer un des exemples de hooks/truc.sample
+
+						info/
+						- Dossier peu intéressant. Il contient permettant de faire des exclusions locales.
+
+						logs/
+						- historique de tous ce qu'il se passe sur le répo
+						- Utiliser la commande reflog
+
+						objects/
+						- La "base de données" de git
+						- Fragile ! NE PAS TOUCHER !
+						- Est utiliser par le garbage collector de git
+
+						refs/
+						- Références nommées du repo git
+						- stash, branches locales, branches remotes, tags
+						- Faire un cat sur un des fichiers et y voir l'Id du commit
+
+						config
+
+						description
+
+						HEAD
+
+						index (Gère la zone de staging)
+
+						packed-refs (Références dormantes de refs utilisé par le garbage collector)
+					</aside>
+				</section>
+			</section>
+
+			<!-- Pimp My Git! -->
+			<section>
+				<section>
+					<h2>Pimp My Git!</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Aliases</h2>
+					<pre><code>[alias]
+	  co = checkout							
+	  st = status --short --branch
+	  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+	  out = log @{u}..
+	  in  = log ..@{u}</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Hook</h2>
+					<ul>
+						<li>pre-commit</li>
+						<li>prepare-commit-msg</li>
+						<li>post-checkout</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Mon premier plugin !</h2>
+					<pre><code>#!/bin/zsh
+								
+	c=$(git branch | grep -c "$1")
+								
+	if [[ "$c" -eq 1 ]]; then
+		git checkout $(git branch | grep "$1")
+	else
+		echo "'$1' is ambigus"
+		git branch | grep "$1"
+		exit 1
+	fi</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h2>Plugins</h2>
+					<ul>
+						<li>git-svn</li>
+						<li>octopussy</li>
+						<li>git-git</li>
+						<li>
+							<a href="https://github.com/unixorn/git-extra-commands#included-scripts" />pleins d'autres</a>
+						</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+			<!-- Quelques scénarios -->
+			<!-- TODO : remplir les scénarios -->
+			<section>
 				<section>
 					/!\ TODO /!\
 
 					Scénario non géré par git avec du code mort qui a été supprimé dans une branche et est utilisé dans une autre,
 					comment git gère-t-il le merge ? (ex de moi qui supprime systématiquement le code mort)
-					********************************************
+					******
 					Scénario de merge avec des conflits, pourquoi les modifs qui ne sont pas conflits sont à tratiter manuellement
 					dans un fichier en conflit.
-					********************************************
+					******
 					In case of fire git commit -am "" & git push
-					********************************************
+					******
 					Déplacer un fichier ET modifier son contenu => git considérera que le fichier original a été supprimé et qu'un
 					nouveau a été créé. Solution : faire deux commits distincts (à noter que ce n'est pas le cas si on ne fait que
 					renommer le fichier et pas le déplacer)
-					********************************************
+					******
 					CRLF, LF, CR
-					********************************************
+					******
 					Rebase over rebase la gestion des conflits identiques encore et encore... (revoir comment reproduire ça)
-					********************************************
+					******
 				</section>
 			</section>
 
