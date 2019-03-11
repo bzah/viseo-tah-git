@@ -54,7 +54,6 @@
 			</section>
 
 			<!-- Git en ligne de commande -->
-			<!-- TODO : Ajouter les commandes et les graphs de google drive  -->
 			<section>
 				<section>
 					<h2>Git en ligne de commande</h2>
@@ -64,6 +63,9 @@
 					<img class="plain strech" src="img/flow.svg" />
 					<aside class="notes">
 					</aside>
+				</section>
+				<section>
+					<img src="img/est_que_tu_rebase.png" href="https://www.facebook.com/lesjoiesducode/photos/a.331370066940118/2021023007974807/?type=3&theater">
 				</section>
 				<section>
 					<h2>Rebase</h2>
@@ -197,36 +199,31 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			<!-- Les clients graphiques pour Git -->
 			<section>
 				<section>
-					<h2 style="color: #5d5d5d;">Les GUI pour Git</h2>
+					<h2>Les GUI pour Git</h2>
 				</section>
 				<section>
-					<h3 style="color: #5d5d5d;">SourceTree</h3>
+					<h3>SourceTree</h3>
 				</section>
 				<section data-background="img/sourceTree.png" data-background-size="98%">
 				</section>
 				<section>
-					<h3 style="color: #5d5d5d;">Kraken</h3>
+					<h3>Kraken</h3>
 				</section>
 				<section data-background="img/kraken.png" data-background-size="98%">
 				</section>
 				<section>
-					<h3 style="color: #5d5d5d;">Tig</h3>
-					<h4 style="color: #5d5d5d;">ncurses-based (GUI dans un terminal) text-mode interface</h4>
+					<h3>Tig</h3>
+					<h4>ncurses-based (GUI dans un terminal) text-mode interface</h4>
 				</section>
 				<section data-background="img/tig.png" data-background-size="80%">
 					<h3 style="color: #5d5d5d; margin-top: -370px;">Tig</h3>
 				</section>
 				<section>
-					<h3 style="color: #5d5d5d;">IntelliJ</h3>
-					<h4 style="color: #5d5d5d;">Faire des beaux commits atomiques ! (Démo)</h4>
-					<p>git add --patch (ou -p)</p>
-					<aside class="notes">
-						Montrer les "git commit --patch"
-					</aside>
+					<h3>IntelliJ, VSCode...</h3>
 				</section>
 				<section>
 					<h3>Avantages</h3>
-					<h4>Git pour les null</h4>
+					Git pour les <i>null</i>
 					<ul>
 						<li>Facile à prendre en main</li>
 						<li>Pas de commandes à apprendre</li>
@@ -240,6 +237,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 						<li>On ne sait pas ce qu'il y a sous le capot</li>
 						<li>Besoin d'un compte fabriquant</li>
 						<li>Erreurs pas toujours compréhensibles</li>
+						<li>Conflits possibles entre les différents processus</li>
 					</ul>
 				</section>
 			</section>
@@ -251,7 +249,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<h2>Plongeons dans</h2>
-					<h2><strong>.git/</strong></h2>
+					<h2><strong>.git/ (démo)</strong></h2>
 					<aside class="notes">
 						Montrer un repo tout juste initialisé.
 						Comparer avec un repo existant avec un historique.
@@ -291,6 +289,13 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 
 						packed-refs (Références dormantes de refs utilisé par le garbage collector)
 					</aside>
+				</section>
+				<section>
+					<h3>Pour approfondir le sujet</h3>
+					<ul>
+						<li><a href="http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html">.git/</a></li>
+						<li><a href="https://githowto.com/git_internals_git_directory">.git/ (autre)</a></li>
+					</ul>
 				</section>
 			</section>
 
@@ -335,8 +340,6 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 		git branch | grep "$1"
 		exit 1
 	fi</code></pre>
-					<aside class="notes">
-					</aside>
 				</section>
 				<section>
 					<h2>Plugins</h2>
@@ -348,33 +351,46 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 							<a href="https://github.com/unixorn/git-extra-commands#included-scripts" />pleins d'autres</a>
 						</li>
 					</ul>
-					<aside class="notes">
-					</aside>
 				</section>
 			</section>
 
-			<!-- Quelques scénarios -->
-			<!-- TODO : remplir les scénarios -->
+			<!-- D'autres scénarios ! -->
 			<section>
 				<section>
-					/!\ TODO /!\
-
-					Scénario non géré par git avec du code mort qui a été supprimé dans une branche et est utilisé dans une autre,
-					comment git gère-t-il le merge ? (ex de moi qui supprime systématiquement le code mort)
-					******
-					Scénario de merge avec des conflits, pourquoi les modifs qui ne sont pas conflits sont à tratiter manuellement
-					dans un fichier en conflit.
-					******
-					In case of fire git commit -am "" & git push
-					******
-					Déplacer un fichier ET modifier son contenu => git considérera que le fichier original a été supprimé et qu'un
-					nouveau a été créé. Solution : faire deux commits distincts (à noter que ce n'est pas le cas si on ne fait que
-					renommer le fichier et pas le déplacer)
-					******
-					CRLF, LF, CR
-					******
-					Rebase over rebase la gestion des conflits identiques encore et encore... (revoir comment reproduire ça)
-					******
+					<h3>D'autres scénarios !</h3>
+				</section>
+				<section>
+					<h2>Git fight!</h2>
+					<h4>La gestion de conflits (démo)</h4>
+					<aside class="notes">
+						Scénario de gestion de conflits
+						- Faire un conflit simple sur une ligne
+						- Montrer pourquoi le rebase peut être casse couille si un conflits très similaire est a résoudre plusieurs fois
+					</aside>
+				</section>
+				<section>
+					<h3>In case of fire</h3>
+					git commit -am "" & git push
+				</section>
+				<section>
+					<h3>Renaming a file,</h3>
+					<h4>How dangerous could it be...</h4>
+					<aside class="notes">
+						Déplacer un fichier ET modifier son contenu => git considérera que le fichier original a été supprimé et qu'un
+						nouveau a été créé, si et seulement si le modification du fichier le rend trop différent du premier.
+						Solution : faire deux commits distincts
+						Mais cela ne résoud pas du tout les conflits qui peuvent en découler !
+					</aside>
+				</section>
+				<section>
+					<h3>End of lines (EOL)</h3>
+					ou l'enfer des projets legacy
+					<aside class="notes">
+						La seule modification que git s'autorise à faire "sans l'accord du dev" est de modifier les fin de lignes des
+						fichiers.
+						Cela peut être controlé globalement au niveau des config git ou bien controlé localement au projet (recommandé)
+						via un fichier .gitattribute.
+					</aside>
 				</section>
 			</section>
 
@@ -391,6 +407,7 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 				</section>
 				<section>
 					<img src="img/gitlab-logo.png" alt="gitlab" width="30%">
+					<p>Gitlab n'est pas NOT git...</p>
 				</section>
 				<section data-background="img/Capture-gitLab.png" data-background-size="98%">
 				</section>
@@ -410,42 +427,94 @@ f07ec95 HEAD@{6}: commit (initial): initial</code></pre>
 			</section>
 
 			<!-- REX et bonnes pratiques -->
-			<!-- TODO : remplir bonnes pratiques -->
 			<section>
 				<section>
 					<h2>REX et bonnes pratiques</h2>
-					<aside class="notes">
-					</aside>
+					<h4>Attention, cette partie contient des avis personnels...</h4>
 				</section>
 				<section>
-					Bonnes pratiques sur la construction du message de commit et de la façon de commiter
-					- Quel est la taille d'un commit (combien de fichiers, combien de ligne (voir –p))
-					- Comment rédiger le messages (This commit will...msg), avec combien de charactère par ligne et pourquoi cette
-					rigueur
-					- Pourquoi écrire en français peut poser problème (UTF-8)
-					- Pourquoi sauter une ligne entre le titre et le texte...
-					- Ne pas commencer le message pas un '#' ! (ni le nom d'une ref d'ailleurs)
+					<h3>Bonnes pratiques sur la construction du message de commit et de la façon de commiter</h3>
+					<ul>
+						<li>Quelle est la taille idéale d'un commit (combien de fichiers, combien de ligne)</li>
+						<li>Faire des beaux commits atomiques ! (git add --patch)</li>
+						<li>Comment rédiger le messages (This commit will...msg), avec combien de charactère par ligne et pourquoi cette
+							rigueur.
+						</li>
+						<li>Pourquoi sauter une ligne entre le titre et le texte...</li>
+						<li>Ne pas commencer le message pas un '#' ! (ni le nom d'une ref d'ailleurs)</li>
+					</ul>
 				</section>
 				<section>
-					Inclure git dans le processus de développement
-					- Tech-Lead review
-					- Résolution de conflits par le tech-lead
-					- Commit message comme changelog
+					<h3>Inclure git dans le processus de développement</h3>
+					<ul>
+						<li>Tech-Lead review</li>
+						<li>Résolution de conflits par le tech-lead</li>
+						<li>Commit message comme changelog</li>
+					</ul>
 				</section>
 				<section>
-					Comment être prévoyant pour la gestion de conflits
-					- Le meilleur moyen de résoudre les conflits, c'est de ne pas en avoir :
-					- Retarder les refactoring structurel sur du code modifié par d'autres
-					(avoir une approche feature first pour les merges, cad celui qui fait le refactoring structurel,
-					se DOIT de faire la résolution des conflits)
-					- L'importance des conventions de codage pour éviter les conflits
-					(voir comment git gère les conflits entre \t, \s \n...)
+					<h3>La gestion de conflits</h3>
+					<ul>
+						<li>Le meilleur moyen de résoudre les conflits, c'est de ne pas en avoir :</li>
+						<ul>
+							<li>Retarder les refactoring structurels sur des modules où d'autres travaillent
+							<li>
+								Avoir une approche feature first pour les merges, c-a-d celui qui fait le refactoring structurel,
+								doit de faire la résolution des conflits.
+								<aside class="notes">
+									Il est plus important d'avoir les features quitte à retarder le refactoring.
+									De plusn, cela semble plus logique d'adapter le refactoring aux nouvelles features que
+									d'adapter une feature au refactoring.
+								</aside>
+							</li>
+							<li>
+								L'importance des conventions de codage pour éviter les conflits
+								par exemple \t VS ' ' (espace)
+							</li>
+						</ul>
+						<li>Sinon, il faut y aller pas à pas et si possible avoir les différents développeur sous la main...</li>
+					</ul>
 				</section>
 				<section>
-					Gitflow
-					- a adapter selon la taille de l'équipe
-					- Créer des noms de branches explicites
-					- Avoir un outil qui ne fait pas l'auto-completion des noms de branches n'est pas une excuse
+					<h3>Les conflits cachés</h3>
+					<p style="text-align: left">Lorsque l'on fait un merge entre une feature et un refactoring, il faut bien faire
+						attention à ne rien avoir
+						cassé.
+					</p>
+					<p style="text-align: left">
+						Si le refactoring a supprimé un fichier qui était référencé mais PAS modifié par la feature, git sera incapable
+						de voir qu'il y a un problème.
+					</p>
+					<p style="text-align: left">
+						Dans ce cas ce sera le compilateur et eventuellement l'éxecution des tests qui permettront de détecter le
+						problème.</p>
+				</section>
+				<section>
+					<h3>Gitflow</h3>
+					<ul>
+						<li>Pas forcément adapté, selon la taille de l'équipe</li>
+						<li>Créer des noms de branches explicites
+							Avoir un outil qui ne fait pas l'auto-completion des noms de branches n'est pas une excuse
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Pour approfondir le sujet</h3>
+					<ul>
+						<li>
+							<a href="https://chris.beams.io/posts/git-commit/">Ecrire un commit (Must read)</a>
+						</li>
+						<li>
+							<a href="https://github.com/nodejs/node/blob/master/doc/guides/contributing/pull-requests.md#commit-message-guidelines">
+								Les commits de NodeJs
+							</a>
+						</li>
+						<li>
+							<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">
+								GitFlow, un bon workflow pour git
+							</a>
+						</li>
+					</ul>
 				</section>
 			</section>
 
@@ -590,16 +659,32 @@ sha1(
 					<aside class="notes">
 					</aside>
 				</section>
+
+				<!-- Pour approfondir le sujet -->
+				<section>
+					<h3>Pour approfondir le sujet</h3>
+					<ul>
+						<li>git objects : https://git-scm.com/book/en/v2/Git-Internals-Git-Objects</li>
+					</ul>
+				</section>
 			</section>
 
-			<!-- Pour approfondir le sujet -->
-			<!-- TODO : remplir -->
 			<section>
-
+				<section>
+					<h2>Quelques commandes pratiques</h2>
+				</section>
+				<section>
+					<h3>Cherry pick plusieurs commits</h3>
+					<pre><code>git cherry-pick cool-feature~3..cool-feature</code></pre>
+				</section>
+				<section>
+					<h3>Cherry rerere</h3>
+					<h4>"reuse recorded resolution"</h4>
+					<pre><code>git config --global rerere.enabled true</code></pre>
+				</section>
 			</section>
 
 			<!-- Ciao ! -->
-			<!-- TODO : remplir -->
 			<section>
 				<h2>Licence</h2>
 				Pour ce qui concerne tous les contenus que nous avons produits dans cette présentation :
@@ -614,12 +699,52 @@ sha1(
 			</section>
 
 			<!-- Ressources -->
-			<!-- TODO : remplir -->
 			<section>
-				<!-- todo rajouter pretty tree dans les alias ?-->
-				pretty-tree : https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
-				lib js pour créer des schéma typique de git : http://gitgraphjs.com/
-				gource : https://gource.io/
+				<h3>Ressources</h3>
+				<ul>
+					<li>
+						<a href="https://slides.com/danapopovici/gittuto#/11">Pti' tuto sur les bases fait par des collègues</a>
+					</li>
+					<li>
+						<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">git objects (Must read)</a>
+					</li>
+					<li>
+						<a href="https://chris.beams.io/posts/git-commit/">Ecrire un commit (Must read)</a>
+					</li>
+					<li>
+						<a href="https://github.com/nodejs/node/blob/master/doc/guides/contributing/pull-requests.md#commit-message-guidelines">
+							Les commits de NodeJs
+						</a>
+					</li>
+					<li>
+						<a href="http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html">.git/</a>
+					</li>
+					<li>
+						<a href="https://githowto.com/git_internals_git_directory">.git/ (autre)</a>
+					</li>
+					<li>
+						<a href="https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs">git pretty-tree</a>
+					</li>
+					<li>
+						<a href="http://gitgraphjs.com/ ">Lib js pour faire de beaux graphs</a>
+					</li>
+					<li>
+						<a href="https://gource.io/">gource</a>
+					</li>
+					<li>
+						<a href="https://git-scm.com/book/en/v2/Git-Tools-Rerere">git rerere</a>
+					</li>
+					<li>
+						<a href="https://stackoverflow.com/questions/26785118/head-vs-head-vs-head-also-known-as-tilde-vs-caret-vs-at-sign">
+							~ ou ^ ?
+						</a>
+					</li>
+					<li>
+						<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">
+							GitFlow, un bon workflow pour git
+						</a>
+					</li>
+				</ul>
 			</section>
 		</div>
 	</div>
